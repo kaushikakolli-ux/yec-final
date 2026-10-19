@@ -13,7 +13,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-2',
     name: "Queen's Smith School of Business",
-    logo: '/sponsors/smith-business.svg',
+    logo: 'https://i.imgur.com/kWtu3jh.png',
     location: 'Kingston, ON & Toronto, ON',
     industry: 'Business Education & Technology Management',
     description: 'Empowering future engineering leaders through world-class MBA, graduate management, and innovation programs.',
@@ -22,7 +22,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-3',
     name: 'PEO (Professional Engineers Ontario)',
-    logo: '/sponsors/peo.svg',
+    logo: 'https://i.imgur.com/hdkvHC8.png',
     location: 'Ontario, Canada',
     industry: 'Engineering Professional Regulatory Body',
     description: 'The regulatory and licensing body governing professional engineering in Ontario, upholding public interest and ethics.',
