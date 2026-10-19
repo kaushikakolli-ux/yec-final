@@ -3,7 +3,7 @@ import { HERO_ASSETS, COMPETITIONS, ABOUT_PHOTOS } from '../data/yecData';
 import { Competition } from '../types';
 import { Award, ArrowRight, ChevronLeft, ChevronRight, Shuffle, Camera, Sparkles, Play, Pause } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { triggerYecConfetti, playCameraShutterSound } from '../utils/confetti';
+import { playCameraShutterSound } from '../utils/confetti';
 
 interface AboutAndScheduleProps {
   onSelectCompetition: (comp: Competition) => void;
@@ -38,7 +38,6 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
   };
 
   const handleShuffle = () => {
-    triggerYecConfetti();
     const nextIdx = (currentPhotoIndex + 1 + Math.floor(Math.random() * (ABOUT_PHOTOS.length - 1))) % ABOUT_PHOTOS.length;
     triggerSnap(nextIdx, true);
   };

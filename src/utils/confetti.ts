@@ -1,43 +1,8 @@
-import confetti from 'canvas-confetti';
-
 /**
- * Fires a burst of celebratory confetti matching the YEC logo colors:
- * - Amber/Orange: #ff9900
- * - Teal/Emerald: #39ae8a
- * - Crimson Red: #e31837
- * - Crisp White: #ffffff
+ * Confetti completely disabled across the site per user request.
  */
-export const triggerYecConfetti = (origin?: { x: number; y: number }) => {
-  const colors = ['#ff9900', '#39ae8a', '#e31837', '#ffffff', '#ffd166'];
-
-  confetti({
-    particleCount: 50,
-    spread: 70,
-    origin: origin || { y: 0.65 },
-    colors,
-    ticks: 200,
-    gravity: 1.1,
-    scalar: 1,
-    shapes: ['square', 'circle']
-  });
-
-  // Secondary burst for rich depth
-  setTimeout(() => {
-    confetti({
-      particleCount: 25,
-      angle: 60,
-      spread: 55,
-      origin: { x: (origin?.x || 0.5) - 0.1, y: origin?.y || 0.65 },
-      colors
-    });
-    confetti({
-      particleCount: 25,
-      angle: 120,
-      spread: 55,
-      origin: { x: (origin?.x || 0.5) + 0.1, y: origin?.y || 0.65 },
-      colors
-    });
-  }, 120);
+export const triggerYecConfetti = (_origin?: { x: number; y: number }) => {
+  // Confetti disabled across the entire site
 };
 
 export const playAudioBeep = (freq = 440, type: OscillatorType = 'sine', duration = 0.12) => {

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&amp;display=swap');
+      .peo-acronym { font-family: 'Inter', Arial, sans-serif; font-size: 50px; font-weight: 900; fill: #2c1638; letter-spacing: 2px; }
+      .peo-full-title { font-family: 'Inter', Arial, sans-serif; font-size: 13.5px; font-weight: 800; fill: #2c1638; letter-spacing: 0.5px; }
+      .peo-reg { font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: #7d4483; letter-spacing: 2px; }
+    </style>
+    <linearGradient id="peo-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a154b" />
+      <stop offset="100%" stop-color="#2c1638" />
+    </linearGradient>
+    <filter id="peo-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2c1638" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <g transform="translate(15, 10)">
+    <!-- Official PEO Engineering Shield / Hexagonal Emblem -->
+    <g transform="translate(20, 20)" filter="url(#peo-shadow)">
+      <!-- Hexagonal / Shield Outer Ring -->
+      <polygon points="36,4 66,22 66,58 36,76 6,58 6,22" fill="url(#peo-purple)" stroke="#2c1638" stroke-width="2" />
+
+      <!-- Inner Gold Geometry -->
+      <polygon points="36,10 60,24 60,56 36,70 12,56 12,24" fill="none" stroke="#d4af37" stroke-width="2" />
+
+      <!-- Stylized Engineering Compass / Caliper & Maple Leaf -->
+      <g transform="translate(36, 40)">
+        <!-- Compass Legs -->
+        <path d="M 0 -20 L -16 18 M 0 -20 L 16 18" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+        <circle cx="0" cy="-20" r="4.5" fill="#d4af37" stroke="#ffffff" stroke-width="1.5" />
+        
+        <!-- Crossbar with rule markings -->
+        <line x1="-12" y1="4" x2="12" y2="4" stroke="#d4af37" stroke-width="2.5" />
+
+        <!-- Maple Leaf Center -->
+        <path d="M 0 -2 L 3 3 L 8 1 L 5 6 L 9 9 L 4 10 L 4 15 L 0 13 L -4 15 L -4 10 L -9 9 L -5 6 L -8 1 L -3 3 Z" fill="#d4af37" />
+      </g>
+    </g>
+
+    <!-- Typography Section -->
+    <!-- Large Bold Acronym: PEO -->
+    <text x="106" y="62" class="peo-acronym">PEO</text>
+
+    <!-- Purple accent underline rule -->
+    <line x1="108" y1="74" x2="335" y2="74" stroke="#4a154b" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Full Organization Name -->
+    <text x="108" y="98" class="peo-full-title">Professional Engineers</text>
+    <text x="108" y="118" class="peo-full-title" fill="#4a154b">Ontario</text>
+
+    <!-- Regulator Tag -->
+    <text x="210" y="118" class="peo-reg">REGULATOR</text>
+  </g>
+</svg>

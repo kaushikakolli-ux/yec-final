@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { HERO_ASSETS } from '../data/yecData';
-import { triggerYecConfetti } from '../utils/confetti';
 
 interface HeaderProps {
   activeTab?: string;

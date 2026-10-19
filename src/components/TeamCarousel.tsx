@@ -3,7 +3,7 @@ import { ALL_TEAM_MEMBERS } from '../data/yecData';
 import { User, Sparkles, ChevronRight, Pin, Users } from 'lucide-react';
 import { TeamMemberModal } from './TeamMemberModal';
 import { motion } from 'motion/react';
-import { playAudioBeep, triggerYecConfetti } from '../utils/confetti';
+import { playAudioBeep } from '../utils/confetti';
 
 export const TeamCarousel: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -24,11 +24,6 @@ export const TeamCarousel: React.FC = () => {
 
   const handleMemberSelect = (e: React.MouseEvent, index: number) => {
     playAudioBeep(520, 'sine', 0.1);
-    const rect = e.currentTarget.getBoundingClientRect();
-    triggerYecConfetti({
-      x: (rect.left + rect.width / 2) / window.innerWidth,
-      y: (rect.top + rect.height / 2) / window.innerHeight
-    });
     setSelectedMemberIndex(index);
   };
 

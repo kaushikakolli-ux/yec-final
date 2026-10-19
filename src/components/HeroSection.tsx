@@ -1,17 +1,9 @@
 import React from 'react';
 import { HERO_ASSETS } from '../data/yecData';
-import { triggerYecConfetti } from '../utils/confetti';
 import { Trophy, Rocket } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const HeroSection: React.FC = () => {
-  const handleLogoClick = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    triggerYecConfetti({
-      x: (rect.left + rect.width / 2) / window.innerWidth,
-      y: (rect.top + rect.height / 2) / window.innerHeight
-    });
-  };
 
   return (
     <section
@@ -69,9 +61,7 @@ export const HeroSection: React.FC = () => {
           whileHover={{ scale: 1.08, rotate: [-1, 1.5, -1, 0] }}
           whileTap={{ scale: 0.94 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-4 sm:mb-6 group cursor-pointer relative"
-          onClick={handleLogoClick}
-          title="Click the YEC Logo for a celebration!"
+          className="mb-4 sm:mb-6 group relative"
         >
           {/* Subtle colorful aura ring behind logo */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#ff9900]/40 via-[#39ae8a]/40 to-[#e31837]/40 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

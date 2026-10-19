@@ -178,7 +178,7 @@ export const SponsorLogo: React.FC<SponsorLogoProps> = ({ logoKey, className = '
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                if (!target.src.includes('sushi-shop.png')) {
+                if (target.src.includes('imgur.com') && target.src.includes('W1ElywB')) {
                   target.src = '/sponsors/sushi-shop.png';
                 }
               }}
@@ -194,7 +194,7 @@ export const SponsorLogo: React.FC<SponsorLogoProps> = ({ logoKey, className = '
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                if (!target.src.includes('sushi-shop.png')) {
+                if (target.src.includes('imgur.com') && target.src.includes('W1ElywB')) {
                   target.src = '/sponsors/sushi-shop.png';
                 }
               }}

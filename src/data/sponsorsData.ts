@@ -12,21 +12,21 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   },
   {
     id: 'sponsor-2',
-    name: 'To Be Announced',
-    logo: 'TBA',
-    location: 'To be announced',
-    industry: 'To be announced',
-    description: 'To be announced',
-    websiteUrl: '#packages-section'
+    name: "Queen's Smith School of Business",
+    logo: '/sponsors/smith-business.svg',
+    location: 'Kingston, ON & Toronto, ON',
+    industry: 'Business Education & Technology Management',
+    description: 'Empowering future engineering leaders through world-class MBA, graduate management, and innovation programs.',
+    websiteUrl: 'https://smith.queensu.ca/'
   },
   {
     id: 'sponsor-3',
-    name: 'To Be Announced',
-    logo: 'TBA',
-    location: 'To be announced',
-    industry: 'To be announced',
-    description: 'To be announced',
-    websiteUrl: '#packages-section'
+    name: 'PEO (Professional Engineers Ontario)',
+    logo: '/sponsors/peo.svg',
+    location: 'Ontario, Canada',
+    industry: 'Engineering Professional Regulatory Body',
+    description: 'The regulatory and licensing body governing professional engineering in Ontario, upholding public interest and ethics.',
+    websiteUrl: 'https://www.peo.on.ca/'
   },
   {
     id: 'sponsor-4',

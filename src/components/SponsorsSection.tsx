@@ -3,7 +3,7 @@ import { SPONSORS_2026_2027 } from '../data/sponsorsData';
 import { SponsorLogo } from './SponsorLogo';
 import { Handshake, ArrowUpRight, Sparkles, Star } from 'lucide-react';
 import { motion } from 'motion/react';
-import { triggerYecConfetti, playAudioBeep } from '../utils/confetti';
+import { playAudioBeep } from '../utils/confetti';
 
 // Organic tilt angles for pinboard
 const DEFAULT_TILT_ANGLES = [-2.5, 2.0, -3.0, 2.5, -1.8, 2.8];
@@ -17,15 +17,6 @@ export const SponsorsSection: React.FC = () => {
     if (cycle === 0) return '#ff9900';
     if (cycle === 1) return '#39ae8a';
     return '#e31837';
-  };
-
-  const handleCardClick = (e: React.MouseEvent, index: number) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    playAudioBeep(480 + index * 60, 'triangle', 0.12);
-    triggerYecConfetti({
-      x: (rect.left + rect.width / 2) / window.innerWidth,
-      y: (rect.top + rect.height / 2) / window.innerHeight
-    });
   };
 
   return (
@@ -124,11 +115,15 @@ export const SponsorsSection: React.FC = () => {
           {sponsors.map((sponsor, index) => {
             const baseAngle = DEFAULT_TILT_ANGLES[index % DEFAULT_TILT_ANGLES.length] || 0;
             const brandColor = getBrandColor(index);
+            const isExternal = Boolean(sponsor.websiteUrl && sponsor.websiteUrl.startsWith('http'));
 
             return (
-              <motion.div
+              <motion.a
                 key={sponsor.id}
                 id={`sponsor-polaroid-${index}`}
+                href={sponsor.websiteUrl || '#packages-section'}
+                target={isExternal ? '_blank' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
                 initial={{ opacity: 0, y: 25, rotate: baseAngle }}
                 whileInView={{ opacity: 1, y: 0, rotate: baseAngle }}
                 viewport={{ once: true }}
@@ -144,17 +139,16 @@ export const SponsorsSection: React.FC = () => {
                   rotate: -1,
                   transition: { duration: 0.1 }
                 }}
-                onClick={(e) => handleCardClick(e, index)}
-                tabIndex={0}
-                role="button"
-                aria-label={`Sponsor: ${sponsor.name}`}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
+                onClick={(e) => {
+                  playAudioBeep(480 + index * 60, 'triangle', 0.12);
+                  if (!isExternal && sponsor.websiteUrl && sponsor.websiteUrl.startsWith('#')) {
                     e.preventDefault();
-                    handleCardClick(e as unknown as React.MouseEvent, index);
+                    const el = document.getElementById(sponsor.websiteUrl.substring(1));
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group relative bg-white border-[3px] border-black rounded-xl p-4 sm:p-5 pb-5 sm:pb-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_var(--hover-color)] transition-all duration-300 cursor-pointer select-none flex flex-col justify-between"
+                aria-label={`Sponsor: ${sponsor.name}`}
+                className="group relative bg-white border-[3px] border-black rounded-xl p-4 sm:p-5 pb-5 sm:pb-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_var(--hover-color)] transition-all duration-300 cursor-pointer select-none flex flex-col justify-between no-underline block"
                 style={{
                   ['--hover-color' as string]: brandColor
                 }}
@@ -186,13 +180,16 @@ export const SponsorsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Polaroid Chin: Only Sponsor Name (No extra wording, no box of info) */}
-                <div className="mt-3 pt-1 flex items-center justify-center text-center">
-                  <h3 className="font-display text-lg sm:text-xl font-black uppercase tracking-tight text-black leading-tight group-hover:text-[#ff9900] transition-colors truncate w-full">
+                {/* Polaroid Chin: Sponsor Name and link indicator */}
+                <div className="mt-3 pt-1 flex items-center justify-center text-center gap-1.5">
+                  <h3 className="font-display text-lg sm:text-xl font-black uppercase tracking-tight text-black leading-tight group-hover:text-[#ff9900] transition-colors truncate">
                     {sponsor.name}
                   </h3>
+                  {isExternal && (
+                    <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                  )}
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </motion.div>
