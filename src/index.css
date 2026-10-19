@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "DM Serif Display", "Playfair Display", Georgia, serif;
+}
+
+html, body {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7f8fa;
+  color: #18181b;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+/* Fun dot grid background */
+.bg-fun-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-continuous {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.animate-marquee-continuous:hover {
+  animation-play-state: paused;
+}
+
+@keyframes yecProgressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes robotJump {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  8% {
+    /* Anticipation crouch planted firmly on the bottom border */
+    transform: translateY(0) scale(1.12, 0.88);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  24% {
+    /* Push off the bottom border and launch into the air */
+    transform: translateY(-28px) scale(0.92, 1.1);
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  48% {
+    /* Peak height of the jump */
+    transform: translateY(-56px) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  68% {
+    /* Fast descent back to the bottom border */
+    transform: translateY(-16px) scale(0.95, 1.06);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
+  }
+  76% {
+    /* Landing impact squash right on the bottom border */
+    transform: translateY(0) scale(1.18, 0.82);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  84% {
+    /* Rebound bounce off the border */
+    transform: translateY(-10px) scale(0.98, 1.02);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  90% {
+    /* Settle back on the border */
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+  94%, 100% {
+    /* Stand firmly on the bottom border */
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+.animate-robot-jump {
+  transform-origin: bottom center;
+  animation: robotJump 2.4s infinite;
+}
+
+@keyframes floatBob {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-float-bob {
+  animation: floatBob 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes blobDrift {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(25px, -20px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+}
+
+.animate-blob-drift {
+  animation: blobDrift 10s ease-in-out infinite;
+}
+
+@keyframes popScale {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-up {
+  animation: popScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Card Light Sweep / Shimmer Effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -70%;
+  width: 30%;
+  height: 220%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 25;
+}
+
+.card-shine:hover::after {
+  left: 150%;
+  opacity: 1;
+}
+
+/* Smooth neo-brutalist interaction physics */
+.yec-btn-spring {
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease;
+}
+
+.yec-btn-spring:active {
+  transform: translate(2px, 2px) scale(0.98);
+}
+
+/* 3D Perspective and Studio Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Camera Flash Effect */
+@keyframes cameraFlash {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-camera-flash {
+  animation: cameraFlash 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Washi tape realistic tape strip effect */
+.washi-tape {
+  position: absolute;
+  height: 18px;
+  width: 90px;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.88;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+  border-left: 2px dashed rgba(255,255,255,0.4);
+  border-right: 2px dashed rgba(255,255,255,0.4);
+  z-index: 25;
+}
+
+/* Playful push pin wobble on card hover */
+@keyframes pinJiggle {
+  0%, 100% {
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -2px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(-50%, -1px) rotate(8deg);
+  }
+  75% {
+    transform: translate(-50%, -2px) rotate(-4deg);
+  }
+}
+
+.group:hover .animate-pin-jiggle {
+  animation: pinJiggle 0.4s ease-in-out;
+}
+
+/* Camera Shutter Body Recoil on Snap */
+@keyframes cameraRecoil {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(3px) scale(0.995);
+  }
+  60% {
+    transform: translateY(-1px) scale(1.002);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-camera-recoil {
+  animation: cameraRecoil 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Playful Letter Hop on hover */
+.letter-spring {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.15s ease;
+}
+
+.letter-spring:hover {
+  transform: translateY(-6px) scale(1.15) rotate(var(--rot, 0deg));
+}
+
+/* Neo-brutalist tactile spring on all interactive cards */
+.yec-card-spring {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.yec-card-spring:hover {
+  transform: translateY(-6px) scale(1.015);
+}
+
+/* Engineering Circuit Board Trace Pattern */
+.bg-circuit-pattern {
+  background-image: url('/circuits-bg.svg');
+  background-size: 240px 240px;
+  background-repeat: repeat;
+}
