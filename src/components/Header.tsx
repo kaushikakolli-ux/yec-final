@@ -11,7 +11,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,31 +45,55 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff9900] via-[#39ae8a] to-[#e31837]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left: Brand Logo */}
-        <a
-          id="header-brand-logo"
-          href="#page-top"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="flex items-center gap-3 group focus:outline-none cursor-pointer"
-        >
-          <img
-            src={HERO_ASSETS.lesLogo}
-            alt="York Engineering Competition Logo"
-            className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-2deg]"
-            referrerPolicy="no-referrer"
-          />
-          <div className="flex flex-col">
-            <span className="font-display font-black text-sm sm:text-base tracking-tight text-black leading-tight group-hover:text-[#ff9900] transition-colors">
-              York Engineering Competition
+        {/* Left: Brand Logo & Small LES Logo */}
+        <div className="flex items-center gap-2 sm:gap-3.5">
+          <a
+            id="header-brand-logo"
+            href="#page-top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none cursor-pointer"
+          >
+            <img
+              src={HERO_ASSETS.yecLogo || '/AFAE54B3-40D2-451C-89A8-5F2ED9309064-removebg-preview.png'}
+              alt="York Engineering Competition Logo"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-2deg]"
+              referrerPolicy="no-referrer"
+            />
+            <div className="flex flex-col justify-center">
+              <span className="font-brand font-black text-sm sm:text-base md:text-lg tracking-[-0.03em] text-zinc-950 leading-tight group-hover:text-[#ff9900] transition-colors">
+                York Engineering Competition
+              </span>
+              <span className="font-brand text-[9px] sm:text-[10px] md:text-[11px] text-zinc-500 font-bold uppercase tracking-[0.14em] mt-0.5">
+                Lassonde School of Engineering
+              </span>
+            </div>
+          </a>
+
+          {/* Divider */}
+          <div className="h-7 sm:h-8 w-[1.5px] bg-zinc-300 shrink-0" />
+
+          {/* Small LES Logo */}
+          <a
+            id="header-les-logo"
+            href="https://lasengsoc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Lassonde Engineering Society (LES)"
+            className="flex items-center gap-1.5 px-1.5 sm:px-2 py-1 rounded-md bg-zinc-100 hover:bg-[#e31837]/10 border border-zinc-200 hover:border-[#e31837] transition-all duration-200 group shrink-0"
+          >
+            <img
+              src={HERO_ASSETS.lesLogo}
+              alt="Lassonde Engineering Society (LES) Logo"
+              className="w-6 h-6 sm:w-7 sm:h-7 object-contain group-hover:scale-110 group-hover:rotate-6 transition-transform"
+            />
+            <span className="hidden md:inline font-brand font-black text-[11px] text-zinc-800 group-hover:text-[#e31837] tracking-wider uppercase">
+              LES
             </span>
-            <span className="text-[11px] text-zinc-600 font-bold uppercase tracking-wider">
-              Lassonde School of Engineering
-            </span>
-          </div>
-        </a>
+          </a>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 text-xs xl:text-sm font-bold text-zinc-800">
@@ -189,45 +212,17 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
             Packages
           </a>
 
-          {/* More Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setMoreDropdownOpen(true)}
-            onMouseLeave={() => setMoreDropdownOpen(false)}
+          {/* EngShop Direct Link */}
+          <a
+            id="nav-engshop"
+            href="https://lasengsoc.com/engshop-y7m66"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-zinc-800 hover:text-black hover:bg-zinc-100 transition-all duration-200"
           >
-            <button
-              id="nav-more-dropdown-btn"
-              className="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-black hover:bg-zinc-100 transition-all duration-200 cursor-pointer"
-            >
-              More
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {moreDropdownOpen && (
-              <div className="absolute top-full right-0 mt-1 w-48 rounded-xl bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] py-2 z-50 animate-scale-up">
-                <a
-                  id="nav-more-join-us"
-                  href="https://lasengsoc.com/directorships"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between px-4 py-2 text-sm text-zinc-800 hover:bg-[#ff9900]/20 font-bold transition-colors"
-                >
-                  <span>Join Us!</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
-                </a>
-                <a
-                  id="nav-more-engshop"
-                  href="https://lasengsoc.com/engshop-y7m66"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between px-4 py-2 text-sm text-zinc-800 hover:bg-[#ff9900]/20 font-bold transition-colors"
-                >
-                  <span>EngShop</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
-                </a>
-              </div>
-            )}
-          </div>
+            <span>EngShop</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+          </a>
         </nav>
 
         {/* Right CTA / Mobile Toggle */}
@@ -320,24 +315,27 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
             </a>
             <hr className="border-zinc-200 my-2" />
             <a
-              id="mobile-nav-join"
-              href="https://lasengsoc.com/directorships"
+              id="mobile-nav-les"
+              href="https://lasengsoc.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-zinc-100 text-zinc-700"
+              className="flex items-center justify-between py-2 px-3 rounded-lg bg-zinc-50 border border-zinc-200 text-black font-bold"
             >
-              <span>Join Us!</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <div className="flex items-center gap-2">
+                <img src={HERO_ASSETS.lesLogo} alt="LES Logo" className="w-5 h-5 object-contain" />
+                <span>Lassonde Engineering Society</span>
+              </div>
+              <ArrowUpRight className="w-4 h-4 opacity-60" />
             </a>
             <a
               id="mobile-nav-shop"
               href="https://lasengsoc.com/engshop-y7m66"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-zinc-100 text-zinc-700"
+              className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-zinc-100 text-zinc-900 font-bold"
             >
               <span>EngShop</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 opacity-60" />
             </a>
           </div>
         </div>

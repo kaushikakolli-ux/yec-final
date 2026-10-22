@@ -4,6 +4,7 @@
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "DM Serif Display", "Playfair Display", Georgia, serif;
+  --font-brand: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 html, body {
@@ -17,6 +18,11 @@ html, body {
 .font-display {
   font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
   letter-spacing: -0.01em;
+}
+
+.font-brand {
+  font-family: "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.025em;
 }
 
 /* Fun dot grid background */

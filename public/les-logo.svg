@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Circular Text Path for LES & York University -->
+    <path id="les-top-arc" d="M 30,100 A 70,70 0 1,1 170,100" fill="none" />
+    <path id="les-bottom-arc" d="M 170,100 A 70,70 0 0,1 30,100" fill="none" />
+    <linearGradient id="les-red-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1a40" />
+      <stop offset="100%" stop-color="#c40d28" />
+    </linearGradient>
+    <filter id="les-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Outer Engineering Gear Teeth (16 cogs) -->
+  <g fill="#141a29" stroke="#141a29" stroke-width="1.5">
+    <circle cx="100" cy="100" r="92" fill="#141a29" />
+    <!-- 16 Gear cogs around perimeter -->
+    <rect x="93" y="2" width="14" height="12" rx="2" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(22.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(45 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(67.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(90 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(112.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(135 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(157.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(180 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(202.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(225 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(247.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(270 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(292.5 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(315 100 100)" />
+    <rect x="93" y="2" width="14" height="12" rx="2" transform="rotate(337.5 100 100)" />
+  </g>
+
+  <!-- White Separator Track Ring -->
+  <circle cx="100" cy="100" r="86" fill="#141a29" stroke="#ffffff" stroke-width="3" />
+
+  <!-- Inner Dark Blue/Navy Banner Ring for Text -->
+  <circle cx="100" cy="100" r="83" fill="#141a29" />
+
+  <!-- Circular Outer Legend Text -->
+  <text fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9.5" font-weight="900" letter-spacing="2.2">
+    <textPath href="#les-top-arc" startOffset="50%" text-anchor="middle">
+      LASSONDE ENGINEERING SOCIETY
+    </textPath>
+  </text>
+  <text fill="#ff9900" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9" font-weight="900" letter-spacing="3.2">
+    <textPath href="#les-bottom-arc" startOffset="50%" text-anchor="middle">
+      ★ YORK UNIVERSITY ★
+    </textPath>
+  </text>
+
+  <!-- Center Shield Ring with Metallic Border -->
+  <circle cx="100" cy="100" r="54" fill="#ffffff" stroke="#e31837" stroke-width="3.5" filter="url(#les-shadow)" />
+
+  <!-- Inner Crest Shield -->
+  <g transform="translate(100, 98)">
+    <!-- Lassonde Red Shield Silhouette -->
+    <path d="M 0 -38 C 24 -38 38 -32 38 -15 C 38 18 16 34 0 42 C -16 34 -38 18 -38 -15 C -38 -32 -24 -38 0 -38 Z" fill="url(#les-red-grad)" stroke="#141a29" stroke-width="2.5" />
+
+    <!-- Polygonal Diamond Facet (Lassonde Bergeron Architectural motif) -->
+    <path d="M 0 -34 L 28 -14 L 0 35 L -28 -14 Z" fill="#ffffff" opacity="0.18" />
+    <line x1="0" y1="-34" x2="0" y2="35" stroke="#ffffff" stroke-width="1.5" opacity="0.4" />
+    <line x1="-28" y1="-14" x2="28" y2="-14" stroke="#ffffff" stroke-width="1.5" opacity="0.4" />
+
+    <!-- Bold Central Acronym: LES -->
+    <text x="0" y="5" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="21" font-weight="900" letter-spacing="1" text-anchor="middle" stroke="#141a29" stroke-width="1.2" paint-order="stroke fill">
+      LES
+    </text>
+
+    <!-- Established Year / Small Subtitle -->
+    <rect x="-18" y="12" width="36" height="8" rx="2" fill="#141a29" />
+    <text x="0" y="18.5" fill="#ffffff" font-family="monospace" font-size="6" font-weight="900" letter-spacing="1" text-anchor="middle">
+      EST. 2011
+    </text>
+
+    <!-- Top Crown / Gear Accent on Shield -->
+    <g transform="translate(0, -38)">
+      <circle cx="0" cy="0" r="4.5" fill="#ff9900" stroke="#141a29" stroke-width="1.5" />
+    </g>
+  </g>
+</svg>
