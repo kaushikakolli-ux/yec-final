@@ -3,11 +3,13 @@ import { HANDBOOKS_DATA, HandbookItem } from '../data/handbooksData';
 import { 
   BookOpen, 
   ArrowUpRight, 
-  Sparkles, 
-  Search
+  Search,
+  ShieldCheck,
+  FileCheck
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { playAudioBeep } from '../utils/confetti';
+import { WaiverModal } from './WaiverModal';
 
 interface HandbooksSectionProps {
   onSelectHandbook?: (handbook: HandbookItem) => void;
@@ -16,6 +18,7 @@ interface HandbooksSectionProps {
 export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
   const [selectedWeekFilter, setSelectedWeekFilter] = useState<'all' | 1 | 2>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isWaiverOpen, setIsWaiverOpen] = useState(false);
 
   const filteredHandbooks = HANDBOOKS_DATA.filter((item) => {
     const matchesWeek = selectedWeekFilter === 'all' || item.week === selectedWeekFilter;
@@ -109,11 +112,9 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </div>
         </div>
 
-        {/* Clean, Direct Handbook Links Grid */}
+        {/* Clean, Direct Handbook Links Grid (All uniformly styled) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredHandbooks.map((item, index) => {
-            const isInnovative = item.challengeId === 'innovative-design';
-
             return (
               <motion.a
                 key={item.id}
@@ -126,9 +127,7 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.02 }}
-                className={`group bg-white border-2 border-black rounded-xl p-3.5 shadow-[2.5px_2.5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:border-black transition-all flex items-center justify-between gap-3 text-left relative cursor-pointer active:translate-x-0.5 active:translate-y-0.5 ${
-                  isInnovative ? 'border-[#e31837] ring-1 ring-[#e31837]/30' : ''
-                }`}
+                className="group bg-white border-2 border-black rounded-xl p-3.5 shadow-[2.5px_2.5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:border-black transition-all flex items-center justify-between gap-3 text-left relative cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
                 title={`Open ${item.title}`}
               >
                 <div className="flex items-center gap-3 min-w-0">
@@ -144,12 +143,6 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
                       >
                         Week {item.week}
                       </span>
-                      {isInnovative && (
-                        <span className="text-[9px] font-black uppercase px-1.5 py-0.5 rounded bg-rose-100 text-rose-900 border border-rose-300 flex items-center gap-0.5">
-                          <Sparkles className="w-2.5 h-2.5 text-rose-600" />
-                          Attached
-                        </span>
-                      )}
                     </div>
                     <h3 className="font-display text-sm font-black text-black uppercase tracking-tight group-hover:text-[#ff9900] transition-colors truncate">
                       {item.title}
@@ -168,8 +161,41 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           })}
         </div>
 
-        {/* Minimal Footer helper */}
-        <div className="mt-5 text-center text-xs text-zinc-500 font-medium">
+        {/* Waiver Action Bar & Questions Helper */}
+        <div className="mt-6 pt-5 border-t-2 border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-center sm:text-left">
+            <div className="w-8 h-8 rounded-lg bg-[#39ae8a]/20 border border-[#39ae8a] flex items-center justify-center shrink-0">
+              <FileCheck className="w-4 h-4 text-[#39ae8a]" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-black">
+                Mandatory Competitor Requirement
+              </p>
+              <p className="text-[11px] text-zinc-600 font-medium">
+                All registered participants must review and complete the event waiver.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto justify-end">
+            <button
+              type="button"
+              id="yec-participant-waiver-btn"
+              onClick={() => {
+                playAudioBeep(560, 'sine', 0.1);
+                setIsWaiverOpen(true);
+              }}
+              className="w-full sm:w-auto px-4 py-2 rounded-xl bg-black text-white hover:bg-[#ff9900] hover:text-black font-bold text-xs uppercase tracking-wider border-2 border-black transition-all flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer shrink-0"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-[#ff9900]" />
+              <span>Participant Waiver</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Minimal Email link */}
+        <div className="mt-3 text-center text-xs text-zinc-500 font-medium">
           Have rulebook questions? Email{' '}
           <a
             href="mailto:yec@lasengsoc.com"
@@ -179,6 +205,12 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </a>
         </div>
       </div>
+
+      {/* Participant Waiver Modal */}
+      <WaiverModal
+        isOpen={isWaiverOpen}
+        onClose={() => setIsWaiverOpen(false)}
+      />
     </section>
   );
 };
