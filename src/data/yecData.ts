@@ -39,9 +39,12 @@ export const ABOUT_PHOTOS = [
   }
 ];
 
+export const SIGNUP_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLScgjXv9CO6Vi5CeAr6aCNQgfPolchdd8Is0vFxi9oclAmSIaw/viewform';
+
 export const TICKET_LINKS = {
   week1: 'https://www.eventbrite.ca/e/yec-week-1-tickets-1685049962799?aff=oddtdtcreator',
   week2: 'https://www.eventbrite.ca/e/yec-week-2-re-engineering-consulting-senior-design-tickets-1681446414489?aff=oddtdtcreator',
+  form: SIGNUP_LINK
 };
 
 export const COMPETITIONS: Competition[] = [
@@ -54,7 +57,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 7-8',
     image: '/competitions/communication.svg',
     description: "Participants must discuss their chosen topic's environmental, economic, technological, and societal impacts, presenting their analysis effectively. Competitors will be judged on the clarity and organization of their ideas, the depth of their analysis, and the quality and delivery of their presentation.",
-    teamSize: '1 - 2 Competitors',
+    teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners represent Lassonde at OEC Engineering Communications',
     details: 'Presenting complex technical concepts to non-technical stakeholders and regulatory bodies with clear storytelling, visual aids, and rigorous scientific basis.'
@@ -67,7 +70,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 7-8',
     image: '/competitions/debate.svg',
     description: 'Akin to real-world scenarios, students develop and present nuanced arguments in favour of or against an impromptu resolution. Teams go head to head in a battle of logic and rhetoric in multiple rounds of debate.',
-    teamSize: '2 Competitors per Team',
+    teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners qualify for the Parliamentary Debate division at OEC',
     details: 'Teams are provided with resolutions regarding ethics, modern engineering developments, and public policy with limited prep time, emphasizing quick critical reasoning and persuasive communication.'
@@ -80,7 +83,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 7-8',
     image: '/competitions/innovative-design.svg',
     description: 'Participants develop a novel product or service to address an unmet need or to improve upon currently available solutions. Competitors will present their nuanced designs to a panel of experts.',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '6 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Top team qualifies for OEC Innovative Design showcase',
     details: 'Original student inventions, capstone spin-offs, patent-pending prototypes, and market-ready products assessed on engineering rigor, originality, and commercial viability.'
@@ -95,7 +98,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/junior-design.svg',
     description: 'Students in their first and second years are tasked with designing creative solutions to real-world engineering problems. Competitors must design a practical solution and present it to judges making the best use of limited time and resources.',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibleYears: '1st & 2nd Year Undergraduates',
     qualification: 'Top team qualifies for Junior Design at OEC and CEC',
     details: 'Participants receive a mystery design problem with raw materials and must build, calibrate, test, and demonstrate their prototype device within the testing arena.'
@@ -108,7 +111,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/senior-design.svg',
     description: 'Students combine multidisciplinary knowledge to design a technical solution to an advanced engineering problem. Participants must design and present a functional solution under resource constraints and adhering to competition requirements.',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibleYears: '3rd & 4th+ Year Undergraduates',
     qualification: 'Top team qualifies for OEC Senior Design with CEC track',
     details: 'The premier hands-on engineering build competition testing embedded systems, mechanical mechanisms, structural endurance, and sensor telemetry.'
@@ -121,7 +124,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/consulting.svg',
     description: 'Competitors will develop and present an in-depth analytical solution to a given multi-dimensional engineering challenge. Teams must demonstrate a thorough understanding of the diverse social, environmental, technological and economic impacts of their solutions.',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners represent Lassonde at OEC Consulting',
     details: 'Focuses on holistic municipal, sustainability, or industrial problems requiring feasibility studies, risk matrix assessments, and executive-level presentations.'
@@ -134,7 +137,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/re-engineering.svg',
     description: 'Teams utilize their diverse skill sets to redesign an existing solution to a problem with the aim of improving its overall performance.',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: '1st place advances to Re-Engineering category at OEC',
     details: 'Competitors dissect a current manufactured product, analyze its engineering flaws or inefficiencies, and deliver a redesigned CAD and operational schematic.'
@@ -147,7 +150,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/programming.svg',
     description: 'Teams are tasked with designing and implementing robust software solutions to solve challenging algorithmic, systems, or data problems under strict time constraints. Code quality, architecture, and performance are evaluated by industry judges.',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '4 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners qualify for the Programming competition at OEC and CEC',
     details: 'Participants design algorithms, write tested and optimized production code, and pitch their software architecture and implementation to industry experts.'
@@ -160,7 +163,7 @@ export const COMPETITIONS: Competition[] = [
     dates: 'November 14-15',
     image: '/competitions/bio-engineering.svg',
     description: 'Competitors apply principles of biomedical, biological, and chemical engineering to engineer solutions for healthcare, clinical diagnostics, or biotechnology challenges under strict clinical and regulatory standards.',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Top team advances to represent Lassonde at OEC Bio-Engineering',
     details: 'Teams evaluate biological systems, design biomedical mechanisms or diagnostics, analyze safety protocols and market feasibility, and present their engineering models to specialized judges.'

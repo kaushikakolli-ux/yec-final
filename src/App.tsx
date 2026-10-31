@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
+import { SignUpSection } from './components/SignUpSection';
 import { AboutAndSchedule } from './components/AboutAndSchedule';
 import { HandbooksSection } from './components/HandbooksSection';
 import { TeamCarousel } from './components/TeamCarousel';
@@ -22,22 +23,25 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Section 1: Bright & Fun Hero with YEC Brand Colors */}
+        {/* Section 1: Bright & Fun Hero with YEC Brand Colors (Home) */}
         <HeroSection />
 
-        {/* Section 2: What is YEC & 2-Week Competition Schedule with Jumping Mascot */}
+        {/* Section 2: Sign Up Section (between Home and About) */}
+        <SignUpSection />
+
+        {/* Section 3: What is YEC & 2-Week Competition Schedule (About & Schedule) */}
         <AboutAndSchedule onSelectCompetition={(comp) => setSelectedCompetition(comp)} />
 
-        {/* Section 3: Official Challenge Handbooks */}
+        {/* Section 4: Official Challenge Handbooks */}
         <HandbooksSection />
 
-        {/* Section 4: Meet the Team Carousel */}
+        {/* Section 5: Meet the Team Carousel */}
         <TeamCarousel />
 
-        {/* Section 5: Our 2026/2027 Sponsors (Clean Logo & Name cards + interactive modal) */}
+        {/* Section 6: Our 2026/2027 Sponsors (Clean Logo & Name cards + interactive modal) */}
         <SponsorsSection />
 
-        {/* Section 6: Packages Section */}
+        {/* Section 7: Packages Section */}
         <PackagesSection onSelectPackage={(pkg) => setSelectedPackage(pkg)} />
       </main>
 

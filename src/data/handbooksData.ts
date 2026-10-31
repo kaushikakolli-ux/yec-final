@@ -104,7 +104,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 7-8',
     link: 'https://docs.google.com/document/d/1ivVa401F6uAUkmCTTLpo6ED5XkZYSbEKKe3FRygw8Xc/edit?usp=sharing',
     status: 'Available',
-    teamSize: 'Up to 6 Members',
+    teamSize: '6 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       '1-Page Executive Design Summary (IEEE citations)',
@@ -126,7 +126,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 7-8',
     link: 'https://lasengsoc.com/s/YEC-Communications-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '1 - 2 Competitors',
+    teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Oral Technical Presentation (10 min)',
@@ -146,7 +146,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 7-8',
     link: 'https://lasengsoc.com/s/YEC-Debate-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '2 Competitors per Team',
+    teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Parliamentary Government & Opposition Rounds',
@@ -166,7 +166,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Junior-Design-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibility: '1st & 2nd Year Undergraduates',
     deliverables: [
       'Physical Hardware Prototype Build',
@@ -186,7 +186,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Senior-Design-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibility: '3rd, 4th & Final Year Undergraduates',
     deliverables: [
       'Complex Multidisciplinary Prototype',
@@ -206,7 +206,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Consulting-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '4 Competitors per Team',
+    teamSize: '4 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Comprehensive Feasibility Study',
@@ -226,7 +226,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Re-Engineering-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Product Teardown & Flaw Identification',
@@ -246,7 +246,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Programming-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '4 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Source Code & Unit Test Suite',
@@ -266,7 +266,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 14-15',
     link: 'https://lasengsoc.com/s/YEC-Bio-Engineering-Rulebook.pdf',
     status: 'Official Rulebook',
-    teamSize: '2 - 4 Competitors',
+    teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
       'Biomedical Device / Process Model',

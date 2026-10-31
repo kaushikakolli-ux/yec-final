@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
-import { HERO_ASSETS } from '../data/yecData';
+import { HERO_ASSETS, SIGNUP_LINK } from '../data/yecData';
 
 interface HeaderProps {
   activeTab?: string;
   onSelectTab?: (tab: string) => void;
+  onOpenSignUp?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }) => {
+export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab, onOpenSignUp }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
@@ -109,6 +110,16 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
             Home
           </a>
 
+          <a
+            id="nav-signup"
+            href={SIGNUP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 rounded-lg hover:text-black hover:bg-amber-500/10 transition-all duration-200"
+          >
+            Sign Up
+          </a>
+
           {/* About Dropdown */}
           <div
             className="relative"
@@ -174,18 +185,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
             className="px-3 py-2 rounded-lg hover:text-black hover:bg-emerald-500/10 transition-all duration-200"
           >
             Handbooks
-          </a>
-
-          <a
-            id="nav-events"
-            href="#tickets-section"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('tickets-section');
-            }}
-            className="px-3 py-2 rounded-lg hover:text-black hover:bg-amber-500/10 transition-all duration-200"
-          >
-            Events & Tickets
           </a>
 
           <a
@@ -269,6 +268,16 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
               className="py-2 px-3 rounded-lg hover:bg-zinc-100 text-black"
             >
               Home
+            </a>
+            <a
+              id="mobile-nav-signup"
+              href={SIGNUP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 px-3 rounded-lg hover:bg-zinc-100 text-black font-bold"
+            >
+              Sign Up
             </a>
             <a
               id="mobile-nav-about"
