@@ -102,7 +102,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Innovative Design',
     week: 1,
     dates: 'November 7-8',
-    link: '/assets/aistudio/2026_Innovative_Design_Rulebook_b8176afb',
+    link: 'https://docs.google.com/document/d/1ivVa401F6uAUkmCTTLpo6ED5XkZYSbEKKe3FRygw8Xc/edit?usp=sharing',
     status: 'Available',
     teamSize: 'Up to 6 Members',
     eligibility: 'All Undergraduate Engineering Years',
