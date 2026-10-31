@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { AboutAndSchedule } from './components/AboutAndSchedule';
+import { HandbooksSection } from './components/HandbooksSection';
 import { TeamCarousel } from './components/TeamCarousel';
 import { SponsorsSection } from './components/SponsorsSection';
 import { PackagesSection } from './components/PackagesSection';
@@ -27,13 +28,16 @@ export default function App() {
         {/* Section 2: What is YEC & 2-Week Competition Schedule with Jumping Mascot */}
         <AboutAndSchedule onSelectCompetition={(comp) => setSelectedCompetition(comp)} />
 
-        {/* Section 3: Meet the Team Carousel */}
+        {/* Section 3: Official Challenge Handbooks */}
+        <HandbooksSection />
+
+        {/* Section 4: Meet the Team Carousel */}
         <TeamCarousel />
 
-        {/* Section 4: Our 2026/2027 Sponsors (Clean Logo & Name cards + interactive modal) */}
+        {/* Section 5: Our 2026/2027 Sponsors (Clean Logo & Name cards + interactive modal) */}
         <SponsorsSection />
 
-        {/* Section 5: Packages Section */}
+        {/* Section 6: Packages Section */}
         <PackagesSection onSelectPackage={(pkg) => setSelectedPackage(pkg)} />
       </main>
 

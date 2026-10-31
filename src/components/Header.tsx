@@ -165,6 +165,18 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
           </a>
 
           <a
+            id="nav-handbooks"
+            href="#handbooks-section"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('handbooks-section');
+            }}
+            className="px-3 py-2 rounded-lg hover:text-black hover:bg-emerald-500/10 transition-all duration-200"
+          >
+            Handbooks
+          </a>
+
+          <a
             id="nav-events"
             href="#tickets-section"
             onClick={(e) => {
@@ -279,6 +291,17 @@ export const Header: React.FC<HeaderProps> = ({ activeTab = 'yec', onSelectTab }
               className="py-2 px-3 rounded-lg hover:bg-zinc-100 text-black"
             >
               Competition Schedule
+            </a>
+            <a
+              id="mobile-nav-handbooks"
+              href="#handbooks-section"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('handbooks-section');
+              }}
+              className="py-2 px-3 rounded-lg hover:bg-zinc-100 text-black font-bold"
+            >
+              Challenge Handbooks
             </a>
             <a
               id="mobile-nav-team"
