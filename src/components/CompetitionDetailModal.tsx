@@ -1,6 +1,6 @@
 import React from 'react';
 import { Competition } from '../types';
-import { X, Users, Calendar, BookOpen, ArrowUpRight } from 'lucide-react';
+import { X, Users, Calendar, BookOpen, ArrowUpRight, MapPin } from 'lucide-react';
 import { HANDBOOKS_DATA } from '../data/handbooksData';
 
 interface CompetitionDetailModalProps {
@@ -95,6 +95,20 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                 </span>
               </div>
             </div>
+
+            {competition.room && (
+              <div className="sm:col-span-2 p-4 rounded-lg border-2 border-black bg-gradient-to-r from-red-50 to-amber-50 flex items-start gap-3 shadow-[3px_3px_0px_0px_#e31837]">
+                <MapPin className="w-5 h-5 text-[#e31837] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-xs uppercase font-bold text-[#e31837] block tracking-wider">
+                    Assigned Competition Room
+                  </span>
+                  <span className="font-black text-base text-zinc-950 font-mono">
+                    {competition.room}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Handbook Callout Card */}

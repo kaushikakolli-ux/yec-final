@@ -10,6 +10,7 @@ export interface Competition {
   eligibleYears: string;
   qualification: string;
   details: string;
+  room?: string;
 }
 
 export interface TeamMember {

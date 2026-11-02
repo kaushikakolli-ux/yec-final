@@ -60,7 +60,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners represent Lassonde at OEC Engineering Communications',
-    details: 'Presenting complex technical concepts to non-technical stakeholders and regulatory bodies with clear storytelling, visual aids, and rigorous scientific basis.'
+    details: 'Presenting complex technical concepts to non-technical stakeholders and regulatory bodies with clear storytelling, visual aids, and rigorous scientific basis.',
+    room: 'DB 0004 & 0009'
   },
   {
     id: 'debate',
@@ -73,7 +74,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners qualify for the Parliamentary Debate division at OEC',
-    details: 'Teams are provided with resolutions regarding ethics, modern engineering developments, and public policy with limited prep time, emphasizing quick critical reasoning and persuasive communication.'
+    details: 'Teams are provided with resolutions regarding ethics, modern engineering developments, and public policy with limited prep time, emphasizing quick critical reasoning and persuasive communication.',
+    room: 'DB 0006'
   },
   {
     id: 'innovative-design',
@@ -86,7 +88,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '6 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Top team qualifies for OEC Innovative Design showcase',
-    details: 'Original student inventions, capstone spin-offs, patent-pending prototypes, and market-ready products assessed on engineering rigor, originality, and commercial viability.'
+    details: 'Original student inventions, capstone spin-offs, patent-pending prototypes, and market-ready products assessed on engineering rigor, originality, and commercial viability.',
+    room: 'DB 0011 & 0013'
   },
 
   // WEEK 2 (NOVEMBER 14-15)
@@ -101,7 +104,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '4 members maximum',
     eligibleYears: '1st & 2nd Year Undergraduates',
     qualification: 'Top team qualifies for Junior Design at OEC and CEC',
-    details: 'Participants receive a mystery design problem with raw materials and must build, calibrate, test, and demonstrate their prototype device within the testing arena.'
+    details: 'Participants receive a mystery design problem with raw materials and must build, calibrate, test, and demonstrate their prototype device within the testing arena.',
+    room: 'BRG 313'
   },
   {
     id: 'senior-design',
@@ -114,7 +118,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '4 members maximum',
     eligibleYears: '3rd & 4th+ Year Undergraduates',
     qualification: 'Top team qualifies for OEC Senior Design with CEC track',
-    details: 'The premier hands-on engineering build competition testing embedded systems, mechanical mechanisms, structural endurance, and sensor telemetry.'
+    details: 'The premier hands-on engineering build competition testing embedded systems, mechanical mechanisms, structural endurance, and sensor telemetry.',
+    room: 'BRG 220 (sandbox)'
   },
   {
     id: 'consulting',
@@ -127,7 +132,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '4 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners represent Lassonde at OEC Consulting',
-    details: 'Focuses on holistic municipal, sustainability, or industrial problems requiring feasibility studies, risk matrix assessments, and executive-level presentations.'
+    details: 'Focuses on holistic municipal, sustainability, or industrial problems requiring feasibility studies, risk matrix assessments, and executive-level presentations.',
+    room: 'BRG 125 & Eatery'
   },
   {
     id: 're-engineering',
@@ -140,7 +146,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: '1st place advances to Re-Engineering category at OEC',
-    details: 'Competitors dissect a current manufactured product, analyze its engineering flaws or inefficiencies, and deliver a redesigned CAD and operational schematic.'
+    details: 'Competitors dissect a current manufactured product, analyze its engineering flaws or inefficiencies, and deliver a redesigned CAD and operational schematic.',
+    room: 'WSC 101'
   },
   {
     id: 'programming',
@@ -153,7 +160,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '4 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners qualify for the Programming competition at OEC and CEC',
-    details: 'Participants design algorithms, write tested and optimized production code, and pitch their software architecture and implementation to industry experts.'
+    details: 'Participants design algorithms, write tested and optimized production code, and pitch their software architecture and implementation to industry experts.',
+    room: 'WSC 104'
   },
   {
     id: 'bio-engineering',
@@ -166,7 +174,8 @@ export const COMPETITIONS: Competition[] = [
     teamSize: '2 members maximum',
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Top team advances to represent Lassonde at OEC Bio-Engineering',
-    details: 'Teams evaluate biological systems, design biomedical mechanisms or diagnostics, analyze safety protocols and market feasibility, and present their engineering models to specialized judges.'
+    details: 'Teams evaluate biological systems, design biomedical mechanisms or diagnostics, analyze safety protocols and market feasibility, and present their engineering models to specialized judges.',
+    room: 'WSC 102'
   }
 ];
 

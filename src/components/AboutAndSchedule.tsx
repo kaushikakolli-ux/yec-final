@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { HERO_ASSETS, COMPETITIONS, ABOUT_PHOTOS } from '../data/yecData';
+import { ROOMS_FOR_EVERYONE, LUNCH_BREAKDOWNS, BUILDING_LEGEND } from '../data/scheduleData';
 import { Competition } from '../types';
-import { Award, ArrowRight, ChevronLeft, ChevronRight, Shuffle, Camera, Sparkles, Play, Pause } from 'lucide-react';
+import { Award, ArrowRight, ChevronLeft, ChevronRight, Shuffle, Camera, Sparkles, Play, Pause, MapPin, Utensils, AlertTriangle, Building, Info, CheckCircle2, Bookmark, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { playCameraShutterSound } from '../utils/confetti';
 
@@ -473,6 +474,251 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
             </div>
           </motion.div>
 
+          {/* ROOMS FOR EVERYONE TO KNOW ABOUT */}
+          <motion.div
+            id="rooms-for-everyone-section"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-12 border-[4px] sm:border-[5px] border-black bg-white rounded-xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
+          >
+            {/* Header banner */}
+            <div className="bg-[#121620] text-white px-5 sm:px-8 py-4 border-b-[3px] border-black flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded-full bg-[#ff9900] animate-pulse" />
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-wider text-white">
+                  ROOMS FOR EVERYONE TO KNOW ABOUT
+                </h3>
+              </div>
+              <span className="font-mono text-xs uppercase tracking-widest text-amber-300 bg-amber-400/20 px-3 py-1 rounded-full border border-amber-400/40 font-bold">
+                Crucial Locations
+              </span>
+            </div>
+
+            {/* Quick check-in and team rooms grid */}
+            <div className="p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#fafafa]">
+              {/* CHECK IN CARD */}
+              <div className="border-[3px] border-black rounded-xl p-5 bg-gradient-to-br from-amber-50 to-white shadow-[4px_4px_0px_0px_#ff9900] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b-2 border-black/10">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-[#ff9900] border-2 border-black flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]">
+                        <CheckCircle2 className="w-5 h-5 text-black" />
+                      </div>
+                      <h4 className="font-display text-2xl font-black uppercase tracking-wide text-black">
+                        CHECK IN
+                      </h4>
+                    </div>
+                    <span className="text-[11px] font-mono uppercase font-bold px-2 py-0.5 rounded-sm bg-black text-white">
+                      Arrival
+                    </span>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                      <div>
+                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
+                          Week 1 (Nov 7-8)
+                        </span>
+                        <span className="font-mono text-lg font-black text-black">
+                          DB 0008
+                        </span>
+                      </div>
+                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
+                        Victor Phillip Dahdaleh Bldg
+                      </span>
+                    </div>
+
+                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                      <div>
+                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
+                          Week 2 (Nov 14-15)
+                        </span>
+                        <span className="font-mono text-lg font-black text-[#e31837]">
+                          Right in front of BRG Eatery
+                        </span>
+                      </div>
+                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
+                        Bergeron Centre Ground Level
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-xs text-zinc-600 font-semibold italic">
+                  * All competitors must check in upon arrival to confirm team attendance and receive competition badges.
+                </p>
+              </div>
+
+              {/* TEAM ROOM CARD */}
+              <div className="border-[3px] border-black rounded-xl p-5 bg-gradient-to-br from-emerald-50 to-white shadow-[4px_4px_0px_0px_#39ae8a] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b-2 border-black/10">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-[#39ae8a] border-2 border-black flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]">
+                        <Users className="w-5 h-5 text-white" />
+                      </div>
+                      <h4 className="font-display text-2xl font-black uppercase tracking-wide text-black">
+                        TEAM ROOM
+                      </h4>
+                    </div>
+                    <span className="text-[11px] font-mono uppercase font-bold px-2 py-0.5 rounded-sm bg-black text-white">
+                      Home Base
+                    </span>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                      <div>
+                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
+                          Week 1 (Nov 7-8)
+                        </span>
+                        <span className="font-mono text-lg font-black text-black">
+                          DB 0012
+                        </span>
+                      </div>
+                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
+                        Victor Phillip Dahdaleh Bldg
+                      </span>
+                    </div>
+
+                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                      <div>
+                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
+                          Week 2 (Nov 14-15)
+                        </span>
+                        <span className="font-mono text-sm sm:text-base font-black text-zinc-950">
+                          No room for day 1 · Day 2 will be 212
+                        </span>
+                      </div>
+                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
+                        BRG 212 (Day 2 Only)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-xs text-zinc-600 font-semibold italic">
+                  * Team room is available for prep, storage, and strategy sync between presentation rounds.
+                </p>
+              </div>
+            </div>
+
+            {/* Building Code Legend */}
+            <div className="px-5 sm:px-8 py-3.5 bg-zinc-100 border-t-2 border-black/15 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span className="font-black uppercase tracking-wider text-zinc-700 flex items-center gap-1.5">
+                <Building className="w-4 h-4 text-zinc-900" />
+                York Campus Building Key:
+              </span>
+              <div className="flex flex-wrap items-center gap-4 font-mono font-bold text-zinc-800">
+                <span className="bg-white px-2.5 py-1 rounded border border-black/20 shadow-xs">
+                  <strong className="text-[#ff9900]">DB:</strong> Victor Phillip Dahdaleh Building
+                </span>
+                <span className="bg-white px-2.5 py-1 rounded border border-black/20 shadow-xs">
+                  <strong className="text-[#39ae8a]">BRG:</strong> Bergeron Centre for Engineering Excellence
+                </span>
+                <span className="bg-white px-2.5 py-1 rounded border border-black/20 shadow-xs">
+                  <strong className="text-[#e31837]">WSC:</strong> William Small Centre
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LUNCH / BREAK BREAKDOWNS & WORKSHOPS */}
+          <motion.div
+            id="lunch-breakdowns-section"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-14 border-[4px] sm:border-[5px] border-black bg-white rounded-xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
+          >
+            {/* Header banner */}
+            <div className="bg-gradient-to-r from-amber-500 via-[#39ae8a] to-[#e31837] p-1 border-b-[3px] border-black">
+              <div className="bg-[#121620] text-white px-5 sm:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#e31837] border-2 border-white flex items-center justify-center shadow-sm">
+                    <Utensils className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-wider text-white">
+                      LUNCH / BREAK BREAKDOWNS
+                    </h3>
+                    <p className="text-xs text-zinc-300 font-medium">
+                      Food locations, sponsor workshops, and YEC Passport requirements
+                    </p>
+                  </div>
+                </div>
+                <span className="font-mono text-xs uppercase tracking-widest text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-400/40 font-bold">
+                  Meals & Workshops
+                </span>
+              </div>
+            </div>
+
+            {/* 2 Break cards */}
+            <div className="p-5 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 bg-[#fafafa]">
+              {/* WEEK 1 LUNCH */}
+              <div className="border-[3px] border-black rounded-xl p-5 bg-white shadow-[4px_4px_0px_0px_#ff9900] flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b-2 border-black/10">
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-md bg-[#ff9900] text-black font-black text-xs uppercase tracking-wider border-2 border-black">
+                        WEEK 1
+                      </span>
+                      <span className="text-xs font-bold text-zinc-600 font-mono">
+                        November 7-8
+                      </span>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-full bg-red-100 text-[#e31837] font-black text-[11px] uppercase tracking-wider border border-red-300 flex items-center gap-1">
+                      <AlertTriangle className="w-3 h-3" />
+                      Attendance Mandatory
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2 text-zinc-900 font-mono font-black text-lg mb-2">
+                      <MapPin className="w-5 h-5 text-[#ff9900]" />
+                      <span>Lunch Location: DB 0006</span>
+                    </div>
+                    <p className="text-sm font-bold text-zinc-900 leading-relaxed bg-amber-50/80 p-4 rounded-lg border-2 border-black/15">
+                      Lunch will be served in <strong className="text-black font-black underline">DB 0006</strong>, Queen's will be hosting a workshop inside where attendance is mandatory for YEC passport.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* WEEK 2 LUNCH */}
+              <div className="border-[3px] border-black rounded-xl p-5 bg-white shadow-[4px_4px_0px_0px_#39ae8a] flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b-2 border-black/10">
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-md bg-[#39ae8a] text-white font-black text-xs uppercase tracking-wider border-2 border-black">
+                        WEEK 2
+                      </span>
+                      <span className="text-xs font-bold text-zinc-600 font-mono">
+                        November 14-15
+                      </span>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-[#39ae8a] font-black text-[11px] uppercase tracking-wider border border-emerald-300">
+                      Writing Centre Hub
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2 text-zinc-900 font-mono font-black text-lg mb-2">
+                      <MapPin className="w-5 h-5 text-[#39ae8a]" />
+                      <span>Lunch Location: BRG 125 & Eatery</span>
+                    </div>
+                    <p className="text-sm font-bold text-zinc-900 leading-relaxed bg-emerald-50/80 p-4 rounded-lg border-2 border-black/15">
+                      Lunch will be served in <strong className="text-black font-black underline">BRG 125/Eatery</strong> to push people to go to the Writing Centre workshop.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* WEEK 1 */}
           <div id="week-1-container" className="mb-16">
             <motion.div
@@ -480,15 +726,42 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="border-[4px] sm:border-[6px] border-black bg-[#ff9900] text-black px-6 py-4 rounded-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-2 mb-8"
+              className="border-[4px] sm:border-[6px] border-black bg-[#ff9900] text-black px-6 py-4 rounded-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-3 mb-6"
             >
-              <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wider font-black">
-                WEEK 1
-              </h3>
+              <div>
+                <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wider font-black">
+                  WEEK 1 COMPETITION
+                </h3>
+                <span className="text-xs font-bold uppercase tracking-wider text-black/80">
+                  3 Categories · Dahdaleh Building (DB)
+                </span>
+              </div>
               <span className="font-bold text-sm sm:text-base tracking-widest uppercase bg-black text-white px-4 py-1.5 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 NOVEMBER 7-8
               </span>
             </motion.div>
+
+            {/* Quick Room Matrix for Week 1 */}
+            <div className="mb-6 p-4 rounded-xl border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-3">
+              <span className="text-xs font-black uppercase tracking-wider text-zinc-700 flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-[#ff9900]" />
+                Week 1 Room Assignments:
+              </span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono font-bold text-zinc-900">
+                <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Communications:</strong> DB 0004 & 0009
+                </span>
+                <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Debate:</strong> DB 0006
+                </span>
+                <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Innovative Design:</strong> DB 0011 & 0013
+                </span>
+                <span className="bg-red-50 text-[#e31837] px-2.5 py-1 rounded border border-red-200">
+                  <strong>Queen's Workshop (Mandatory):</strong> DB 0006
+                </span>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {week1Comps.map((comp, idx) => (
@@ -517,12 +790,33 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                       className="max-h-full max-w-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
                       referrerPolicy="no-referrer"
                     />
+
+                    {/* Room Badge in Photo Area */}
+                    {comp.room && (
+                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
+                        <MapPin className="w-3.5 h-3.5 text-[#ff9900]" />
+                        <span className="font-mono text-xs font-black text-black">
+                          {comp.room}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <h4 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black mb-2 group-hover:text-[#ff9900] transition-colors leading-tight">
-                        {comp.name}
-                      </h4>
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <h4 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black group-hover:text-[#ff9900] transition-colors leading-tight">
+                          {comp.name}
+                        </h4>
+                      </div>
+
+                      {/* Explicit Room Callout */}
+                      {comp.room && (
+                        <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-100/90 border border-black/20 text-xs font-mono font-bold text-black">
+                          <MapPin className="w-3 h-3 text-[#ff9900]" />
+                          <span>Room: {comp.room}</span>
+                        </div>
+                      )}
+
                       <p className="text-zinc-800 text-sm leading-relaxed line-clamp-4 font-medium">
                         {comp.description}
                       </p>
@@ -544,15 +838,51 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="border-[4px] sm:border-[6px] border-black bg-[#39ae8a] text-white px-6 py-4 rounded-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-2 mb-8"
+              className="border-[4px] sm:border-[6px] border-black bg-[#39ae8a] text-white px-6 py-4 rounded-lg shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-3 mb-6"
             >
-              <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wider font-black">
-                WEEK 2
-              </h3>
+              <div>
+                <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wider font-black">
+                  WEEK 2 COMPETITION
+                </h3>
+                <span className="text-xs font-bold uppercase tracking-wider text-white/90">
+                  6 Categories · Bergeron Centre (BRG) & William Small Centre (WSC)
+                </span>
+              </div>
               <span className="font-bold text-sm sm:text-base tracking-widest uppercase bg-black text-white px-4 py-1.5 rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 NOVEMBER 14-15
               </span>
             </motion.div>
+
+            {/* Quick Room Matrix for Week 2 */}
+            <div className="mb-6 p-4 rounded-xl border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex flex-wrap items-center justify-between gap-3">
+              <span className="text-xs font-black uppercase tracking-wider text-zinc-700 flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-[#39ae8a]" />
+                Week 2 Room Assignments:
+              </span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono font-bold text-zinc-900">
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Consulting:</strong> BRG 125 & Eatery
+                </span>
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Re-Engineering:</strong> WSC 101
+                </span>
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Programming:</strong> WSC 104
+                </span>
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Bio-Engineering:</strong> WSC 102
+                </span>
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Jr. Design:</strong> BRG 313
+                </span>
+                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Sr. Design:</strong> BRG 220 (sandbox)
+                </span>
+                <span className="bg-teal-50 text-teal-800 px-2.5 py-1 rounded border border-teal-200">
+                  <strong>Writing Centre:</strong> 125/Eatery
+                </span>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {week2Comps.map((comp, idx) => {
@@ -602,12 +932,31 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                         className="max-h-full max-w-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
                         referrerPolicy="no-referrer"
                       />
+
+                      {/* Room Badge in Photo Area */}
+                      {comp.room && (
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
+                          <MapPin className="w-3.5 h-3.5 text-[#39ae8a]" />
+                          <span className="font-mono text-xs font-black text-black">
+                            {comp.room}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
-                        <h4 className={`font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-black mb-2 ${accentTextColor} transition-colors leading-tight`}>
+                        <h4 className={`font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-black mb-1 ${accentTextColor} transition-colors leading-tight`}>
                           {comp.name}
                         </h4>
+
+                        {/* Explicit Room Callout */}
+                        {comp.room && (
+                          <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-50 border border-black/20 text-xs font-mono font-bold text-black">
+                            <MapPin className="w-3 h-3 text-[#39ae8a]" />
+                            <span>Room: {comp.room}</span>
+                          </div>
+                        )}
+
                         <p className="text-zinc-800 text-xs leading-relaxed line-clamp-4 font-medium">
                           {comp.description}
                         </p>
