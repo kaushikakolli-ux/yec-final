@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ae8a" />
+      <stop offset="100%" stop-color="#22725a" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9900" />
+      <stop offset="100%" stop-color="#ffb74d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+
+  <!-- Subtle geometric background accent -->
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#ffffff" stroke-width="4" stroke-dasharray="12 8" opacity="0.25" />
+  <circle cx="360" cy="50" r="90" fill="#ff9900" opacity="0.2" />
+  <circle cx="40" cy="350" r="80" fill="#e31837" opacity="0.2" />
+
+  <!-- Avatar silhouette base -->
+  <g transform="translate(0, 20)">
+    <!-- Shoulders / Torso -->
+    <path d="M 100 360 C 100 280, 140 240, 200 240 C 260 240, 300 280, 300 360 Z" fill="#ffffff" opacity="0.95" />
+    
+    <!-- Head / Neck -->
+    <circle cx="200" cy="155" r="70" fill="#ffffff" opacity="0.95" />
+
+    <!-- Stylized Hair silhouette -->
+    <path d="M 130 155 C 130 95, 160 85, 200 85 C 240 85, 270 95, 270 155 C 270 175, 265 210, 260 225 C 255 190, 245 140, 200 140 C 155 140, 145 190, 140 225 C 135 210, 130 175, 130 155 Z" fill="#121620" />
+
+    <!-- Initials badge overlay -->
+    <circle cx="200" cy="285" r="46" fill="url(#accentGrad)" stroke="#121620" stroke-width="4" />
+    <text x="200" y="298" font-family="'Clash Display', 'Inter', -apple-system, sans-serif" font-size="34" font-weight="900" fill="#121620" text-anchor="middle" letter-spacing="1">GS</text>
+  </g>
+
+  <!-- Bottom Name Banner -->
+  <rect x="30" y="340" width="340" height="42" rx="8" fill="#121620" stroke="#000000" stroke-width="2" />
+  <text x="200" y="367" font-family="'Clash Display', 'Space Grotesk', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="2">GITALI SHARMA</text>
+</svg>

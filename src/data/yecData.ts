@@ -209,6 +209,15 @@ export const ALL_TEAM_MEMBERS: TeamMember[] = [
     image: '/team/adi-malek.jpg'
   },
   {
+    name: 'Gitali Sharma',
+    role: 'VC-Communications',
+    category: 'Executive Committee',
+    major: 'Mechanical Engineering',
+    year: '2nd Year',
+    interestingFact: 'Jack of all trades',
+    image: '/team/gitali-sharma.svg'
+  },
+  {
     name: 'Kaleab Tesfaye',
     role: 'VC-Finance',
     category: 'Executive Committee',
