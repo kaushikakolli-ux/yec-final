@@ -35,10 +35,6 @@ export const ROOMS_FOR_EVERYONE = {
   checkIn: [
     { week: 'Week 1', location: 'DB 0008', building: 'Dahdaleh Building' },
     { week: 'Week 2', location: 'Right in front of BRG Eatery', building: 'Bergeron Centre' }
-  ],
-  teamRooms: [
-    { week: 'Week 1', location: 'DB 0012', building: 'Dahdaleh Building' },
-    { week: 'Week 2', location: 'No room for Day 1 · Day 2 will be BRG 212', building: 'Bergeron Centre' }
   ]
 };
 
@@ -59,7 +55,7 @@ export const LUNCH_BREAKDOWNS = [
     dates: 'November 14-15',
     location: 'BRG 125 & Eatery',
     accentColor: '#39ae8a',
-    description: 'Lunch will be served in BRG 125 / Eatery to push people to go to the Writing Centre workshop.',
+    description: 'Lunch will be served in BRG 125 / Eatery to allow people to fill in their passports and attend the Writing Centre workshop.',
     badge: 'Writing Centre Workshop',
     workshopName: 'Writing Centre Workshop',
     workshopLocation: 'BRG 125 & Eatery',
@@ -104,7 +100,7 @@ export const SCHEDULE_DATA: WeekScheduleDetails[] = [
     teamRoom: 'No room for Day 1, Day 2 will be 212',
     lunch: {
       location: 'BRG 125 / Eatery',
-      description: 'Lunch will be served in BRG 125/Eatery to push people to go to the Writing Centre workshop.',
+      description: 'Lunch will be served in BRG 125/Eatery to allow people to fill in their passports and attend the Writing Centre workshop.',
       isMandatory: false,
       tag: 'Writing Centre Hub'
     },

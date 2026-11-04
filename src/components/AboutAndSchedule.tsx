@@ -496,111 +496,73 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
               </span>
             </div>
 
-            {/* Quick check-in and team rooms grid */}
-            <div className="p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#fafafa]">
+            {/* Quick check-in grid */}
+            <div className="p-5 sm:p-8 bg-[#fafafa]">
               {/* CHECK IN CARD */}
-              <div className="border-[3px] border-black rounded-xl p-5 bg-gradient-to-br from-amber-50 to-white shadow-[4px_4px_0px_0px_#ff9900] flex flex-col justify-between">
+              <div className="border-[3px] border-black rounded-xl p-5 sm:p-6 bg-gradient-to-br from-amber-50/70 via-white to-emerald-50/70 shadow-[4px_4px_0px_0px_#ff9900] flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b-2 border-black/10">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-lg bg-[#ff9900] border-2 border-black flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="flex items-center justify-between gap-2 mb-5 pb-3 border-b-2 border-black/10">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-lg bg-[#ff9900] border-2 border-black flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]">
                         <CheckCircle2 className="w-5 h-5 text-black" />
                       </div>
-                      <h4 className="font-display text-2xl font-black uppercase tracking-wide text-black">
-                        CHECK IN
-                      </h4>
+                      <div>
+                        <h4 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-wide text-black">
+                          CHECK IN
+                        </h4>
+                        <p className="text-xs text-zinc-600 font-semibold">
+                          Arrival and team confirmation desk
+                        </p>
+                      </div>
                     </div>
-                    <span className="text-[11px] font-mono uppercase font-bold px-2 py-0.5 rounded-sm bg-black text-white">
+                    <span className="text-[11px] font-mono uppercase font-bold px-2.5 py-1 rounded-sm bg-black text-white">
                       Arrival
                     </span>
                   </div>
 
-                  <div className="space-y-3.5">
-                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="p-4 rounded-xl border-2 border-black/20 bg-white flex flex-col justify-between shadow-xs">
                       <div>
-                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
-                          Week 1 (Nov 7-8)
-                        </span>
-                        <span className="font-mono text-lg font-black text-black">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs font-black uppercase tracking-wider text-[#ff9900] bg-amber-100 px-2 py-0.5 rounded border border-amber-300">
+                            Week 1 · Nov 7-8
+                          </span>
+                          <span className="text-xs font-bold text-zinc-500">
+                            Victor Phillip Dahdaleh Bldg
+                          </span>
+                        </div>
+                        <span className="font-mono text-2xl sm:text-3xl font-black text-black block mt-1">
                           DB 0008
                         </span>
                       </div>
-                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
-                        Victor Phillip Dahdaleh Bldg
-                      </span>
+                      <p className="mt-2 text-xs text-zinc-600 font-medium">
+                        Main check-in desk inside Dahdaleh Building ground floor.
+                      </p>
                     </div>
 
-                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <div className="p-4 rounded-xl border-2 border-black/20 bg-white flex flex-col justify-between shadow-xs">
                       <div>
-                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
-                          Week 2 (Nov 14-15)
-                        </span>
-                        <span className="font-mono text-lg font-black text-[#e31837]">
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs font-black uppercase tracking-wider text-[#39ae8a] bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">
+                            Week 2 · Nov 14-15
+                          </span>
+                          <span className="text-xs font-bold text-zinc-500">
+                            Bergeron Centre Ground Level
+                          </span>
+                        </div>
+                        <span className="font-mono text-xl sm:text-2xl font-black text-[#e31837] block mt-1">
                           Right in front of BRG Eatery
                         </span>
                       </div>
-                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
-                        Bergeron Centre Ground Level
-                      </span>
+                      <p className="mt-2 text-xs text-zinc-600 font-medium">
+                        Arrival desk positioned directly outside the BRG Eatery.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <p className="mt-4 text-xs text-zinc-600 font-semibold italic">
                   * All competitors must check in upon arrival to confirm team attendance and receive competition badges.
-                </p>
-              </div>
-
-              {/* TEAM ROOM CARD */}
-              <div className="border-[3px] border-black rounded-xl p-5 bg-gradient-to-br from-emerald-50 to-white shadow-[4px_4px_0px_0px_#39ae8a] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b-2 border-black/10">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-lg bg-[#39ae8a] border-2 border-black flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]">
-                        <Users className="w-5 h-5 text-white" />
-                      </div>
-                      <h4 className="font-display text-2xl font-black uppercase tracking-wide text-black">
-                        TEAM ROOM
-                      </h4>
-                    </div>
-                    <span className="text-[11px] font-mono uppercase font-bold px-2 py-0.5 rounded-sm bg-black text-white">
-                      Home Base
-                    </span>
-                  </div>
-
-                  <div className="space-y-3.5">
-                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                      <div>
-                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
-                          Week 1 (Nov 7-8)
-                        </span>
-                        <span className="font-mono text-lg font-black text-black">
-                          DB 0012
-                        </span>
-                      </div>
-                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
-                        Victor Phillip Dahdaleh Bldg
-                      </span>
-                    </div>
-
-                    <div className="p-3 rounded-lg border-2 border-black/20 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                      <div>
-                        <span className="text-xs font-black uppercase tracking-wider text-zinc-500 block">
-                          Week 2 (Nov 14-15)
-                        </span>
-                        <span className="font-mono text-sm sm:text-base font-black text-zinc-950">
-                          No room for day 1 · Day 2 will be 212
-                        </span>
-                      </div>
-                      <span className="text-xs font-bold text-zinc-600 sm:text-right">
-                        BRG 212 (Day 2 Only)
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="mt-4 text-xs text-zinc-600 font-semibold italic">
-                  * Team room is available for prep, storage, and strategy sync between presentation rounds.
                 </p>
               </div>
             </div>
@@ -711,7 +673,7 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                       <span>Lunch Location: BRG 125 & Eatery</span>
                     </div>
                     <p className="text-sm font-bold text-zinc-900 leading-relaxed bg-emerald-50/80 p-4 rounded-lg border-2 border-black/15">
-                      Lunch will be served in <strong className="text-black font-black underline">BRG 125/Eatery</strong> to push people to go to the Writing Centre workshop.
+                      Lunch will be served in <strong className="text-black font-black underline">BRG 125/Eatery</strong> to allow people to fill in their passports and attend the Writing Centre workshop.
                     </p>
                   </div>
                 </div>
