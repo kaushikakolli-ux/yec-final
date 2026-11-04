@@ -215,7 +215,7 @@ export const ALL_TEAM_MEMBERS: TeamMember[] = [
     major: 'Mechanical Engineering',
     year: '2nd Year',
     interestingFact: 'Jack of all trades',
-    image: '/team/gitali-sharma.svg'
+    image: 'https://i.imgur.com/ZHXFG8S.png'
   },
   {
     name: 'Kaleab Tesfaye',
