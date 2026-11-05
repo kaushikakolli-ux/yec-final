@@ -632,9 +632,9 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                         November 7-8
                       </span>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full bg-red-100 text-[#e31837] font-black text-[11px] uppercase tracking-wider border border-red-300 flex items-center gap-1">
-                      <AlertTriangle className="w-3 h-3" />
-                      Attendance Mandatory
+                    <span className="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-black text-[11px] uppercase tracking-wider border border-amber-300 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3 text-[#ff9900]" />
+                      Passport for OEC Qualification
                     </span>
                   </div>
 
@@ -644,7 +644,7 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                       <span>Lunch Location: DB 0006</span>
                     </div>
                     <p className="text-sm font-bold text-zinc-900 leading-relaxed bg-amber-50/80 p-4 rounded-lg border-2 border-black/15">
-                      Lunch will be served in <strong className="text-black font-black underline">DB 0006</strong>, Queen's will be hosting a workshop inside where attendance is mandatory for YEC passport.
+                      Lunch will be served in <strong className="text-black font-black underline">DB 0006</strong>, Queen's will be hosting a workshop inside for the passport to potentially qualify for OEC.
                     </p>
                   </div>
                 </div>
@@ -719,8 +719,8 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                 <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
                   <strong>Innovative Design:</strong> DB 0011 & 0013
                 </span>
-                <span className="bg-red-50 text-[#e31837] px-2.5 py-1 rounded border border-red-200">
-                  <strong>Queen's Workshop (Mandatory):</strong> DB 0006
+                <span className="bg-amber-50 text-zinc-900 px-2.5 py-1 rounded border border-black/20">
+                  <strong>Queen's Workshop (OEC Passport):</strong> DB 0006
                 </span>
               </div>
             </div>

@@ -44,11 +44,11 @@ export const LUNCH_BREAKDOWNS = [
     dates: 'November 7-8',
     location: 'DB 0006',
     accentColor: '#ff9900',
-    description: "Lunch will be served in DB 0006. Queen's will be hosting a workshop inside where attendance is mandatory for the YEC passport.",
-    badge: 'Mandatory Workshop for Passport',
+    description: "Lunch will be served in DB 0006. Queen's will be hosting a workshop inside for the passport to potentially qualify for OEC.",
+    badge: 'Passport for OEC Qualification',
     workshopName: "Queen's Workshop",
     workshopLocation: 'DB 0006',
-    isMandatory: true
+    isMandatory: false
   },
   {
     week: 'WEEK 2',
@@ -74,15 +74,15 @@ export const SCHEDULE_DATA: WeekScheduleDetails[] = [
     teamRoom: 'DB 0012',
     lunch: {
       location: 'DB 0006',
-      description: "Lunch will be served in DB 0006, Queen's will be hosting a workshop inside where attendance is mandatory for YEC passport.",
-      isMandatory: true,
-      tag: 'Mandatory for YEC Passport'
+      description: "Lunch will be served in DB 0006, Queen's will be hosting a workshop inside for the passport to potentially qualify for OEC.",
+      isMandatory: false,
+      tag: 'Passport for OEC Qualification'
     },
     workshop: {
       title: "Queen's Workshop",
       room: 'DB 0006',
-      mandatory: true,
-      details: "Queen's workshop will be held in DB 0006, attendance is mandatory for YEC passport."
+      mandatory: false,
+      details: "Queen's workshop will be held in DB 0006 for the passport to potentially qualify for OEC."
     },
     competitions: [
       { id: 'communication', name: 'Communications', room: 'DB 0004 and 0009' },
