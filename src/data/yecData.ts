@@ -40,6 +40,7 @@ export const ABOUT_PHOTOS = [
 ];
 
 export const SIGNUP_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLScgjXv9CO6Vi5CeAr6aCNQgfPolchdd8Is0vFxi9oclAmSIaw/viewform';
+export const OEC_REGULATIONS_LINK = '/assets/aistudio/YEC-OEC_GENERAL_RULEBOOK_e0c487a4';
 
 export const TICKET_LINKS = {
   week1: 'https://www.eventbrite.ca/e/yec-week-1-tickets-1685049962799?aff=oddtdtcreator',
