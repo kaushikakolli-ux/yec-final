@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { HANDBOOKS_DATA, HandbookItem } from '../data/handbooksData';
-import { 
-  BookOpen, 
-  ArrowUpRight, 
+import { WAIVER_LINK } from '../data/yecData';
+import {
+  BookOpen,
+  ArrowUpRight,
   Search,
   ShieldCheck,
   FileCheck
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { playAudioBeep } from '../utils/confetti';
-import { WaiverModal } from './WaiverModal';
 
 interface HandbooksSectionProps {
   onSelectHandbook?: (handbook: HandbookItem) => void;
@@ -18,7 +18,6 @@ interface HandbooksSectionProps {
 export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
   const [selectedWeekFilter, setSelectedWeekFilter] = useState<'all' | 1 | 2>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [isWaiverOpen, setIsWaiverOpen] = useState(false);
 
   const filteredHandbooks = HANDBOOKS_DATA.filter((item) => {
     const matchesWeek = selectedWeekFilter === 'all' || item.week === selectedWeekFilter;
@@ -178,19 +177,18 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto justify-end">
-            <button
-              type="button"
+            <a
               id="yec-participant-waiver-btn"
-              onClick={() => {
-                playAudioBeep(560, 'sine', 0.1);
-                setIsWaiverOpen(true);
-              }}
+              href={WAIVER_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playAudioBeep(560, 'sine', 0.1)}
               className="w-full sm:w-auto px-4 py-2 rounded-xl bg-black text-white hover:bg-[#ff9900] hover:text-black font-bold text-xs uppercase tracking-wider border-2 border-black transition-all flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer shrink-0"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-[#ff9900]" />
               <span>Participant Waiver</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -205,12 +203,6 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </a>
         </div>
       </div>
-
-      {/* Participant Waiver Modal */}
-      <WaiverModal
-        isOpen={isWaiverOpen}
-        onClose={() => setIsWaiverOpen(false)}
-      />
     </section>
   );
 };
