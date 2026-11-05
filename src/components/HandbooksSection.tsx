@@ -6,10 +6,12 @@ import {
   ArrowUpRight,
   Search,
   ShieldCheck,
-  FileCheck
+  FileCheck,
+  Clock
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { playAudioBeep } from '../utils/confetti';
+import { HandbookReleaseModal } from './HandbookReleaseModal';
 
 interface HandbooksSectionProps {
   onSelectHandbook?: (handbook: HandbookItem) => void;
@@ -18,6 +20,7 @@ interface HandbooksSectionProps {
 export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
   const [selectedWeekFilter, setSelectedWeekFilter] = useState<'all' | 1 | 2>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedPendingHandbook, setSelectedPendingHandbook] = useState<HandbookItem | null>(null);
 
   const filteredHandbooks = HANDBOOKS_DATA.filter((item) => {
     const matchesWeek = selectedWeekFilter === 'all' || item.week === selectedWeekFilter;
@@ -111,27 +114,75 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </div>
         </div>
 
-        {/* Clean, Direct Handbook Links Grid (All uniformly styled) */}
+        {/* Clean, Direct Handbook Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredHandbooks.map((item, index) => {
+            const isInnovative = item.challengeId === 'innovative-design';
+
+            if (isInnovative) {
+              return (
+                <motion.a
+                  key={item.id}
+                  id={`handbook-link-${item.challengeId}`}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => playAudioBeep(520, 'triangle', 0.08)}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.25, delay: index * 0.02 }}
+                  className="group bg-white border-2 border-black rounded-xl p-3.5 shadow-[2.5px_2.5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_#ff9900] hover:border-black transition-all flex items-center justify-between gap-3 text-left relative cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
+                  title={`Open official ${item.title}`}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#ff9900]/20 border border-black flex items-center justify-center shrink-0 group-hover:bg-[#ff9900] group-hover:text-black transition-colors">
+                      <BookOpen className="w-4 h-4 text-black" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-black bg-[#ff9900] text-black">
+                          Week {item.week}
+                        </span>
+                        <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-emerald-400 bg-emerald-100 text-emerald-800">
+                          Available
+                        </span>
+                      </div>
+                      <h3 className="font-display text-sm font-black text-black uppercase tracking-tight group-hover:text-[#ff9900] transition-colors truncate">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-black text-white group-hover:bg-[#ff9900] group-hover:text-black border border-black transition-colors shadow-xs">
+                    <span className="text-[11px] font-bold uppercase tracking-wider hidden sm:inline">
+                      Open
+                    </span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </motion.a>
+              );
+            }
+
             return (
-              <motion.a
+              <motion.button
                 key={item.id}
+                type="button"
                 id={`handbook-link-${item.challengeId}`}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => playAudioBeep(520, 'triangle', 0.08)}
+                onClick={() => {
+                  playAudioBeep(450, 'sine', 0.08);
+                  setSelectedPendingHandbook(item);
+                }}
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.02 }}
                 className="group bg-white border-2 border-black rounded-xl p-3.5 shadow-[2.5px_2.5px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:border-black transition-all flex items-center justify-between gap-3 text-left relative cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
-                title={`Open ${item.title}`}
+                title={`${item.title} - Will be released shortly`}
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-100 border border-black flex items-center justify-center shrink-0 group-hover:bg-[#ff9900] group-hover:text-black transition-colors">
-                    <BookOpen className="w-4 h-4 text-black" />
+                  <div className="w-8 h-8 rounded-lg bg-zinc-100 border border-black flex items-center justify-center shrink-0 group-hover:bg-zinc-200 transition-colors">
+                    <BookOpen className="w-4 h-4 text-zinc-600" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5 mb-0.5">
@@ -142,20 +193,23 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
                       >
                         Week {item.week}
                       </span>
+                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 border border-zinc-300 text-zinc-600">
+                        Pending
+                      </span>
                     </div>
-                    <h3 className="font-display text-sm font-black text-black uppercase tracking-tight group-hover:text-[#ff9900] transition-colors truncate">
+                    <h3 className="font-display text-sm font-black text-black uppercase tracking-tight group-hover:text-zinc-700 transition-colors truncate">
                       {item.title}
                     </h3>
                   </div>
                 </div>
 
-                <div className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-zinc-100 group-hover:bg-black group-hover:text-white border border-black transition-colors">
-                  <span className="text-[11px] font-bold uppercase tracking-wider hidden sm:inline">
-                    Open
+                <div className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-zinc-100 group-hover:bg-amber-100 group-hover:text-amber-900 border border-black/30 transition-colors">
+                  <Clock className="w-3.5 h-3.5 text-zinc-500 group-hover:text-amber-700" />
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider hidden sm:inline">
+                    Release Soon
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-black group-hover:text-[#ff9900] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
-              </motion.a>
+              </motion.button>
             );
           })}
         </div>
@@ -203,6 +257,12 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
           </a>
         </div>
       </div>
+
+      {/* Handbook Release Notice Modal */}
+      <HandbookReleaseModal
+        handbook={selectedPendingHandbook}
+        onClose={() => setSelectedPendingHandbook(null)}
+      />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Competition } from '../types';
-import { X, Users, Calendar, BookOpen, ArrowUpRight, MapPin } from 'lucide-react';
+import { X, Users, Calendar, BookOpen, ArrowUpRight, MapPin, Clock } from 'lucide-react';
 import { HANDBOOKS_DATA } from '../data/handbooksData';
 
 interface CompetitionDetailModalProps {
@@ -121,20 +121,29 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                     {handbook.title}
                   </span>
                   <span className="text-xs text-zinc-600 font-medium">
-                    Download official deliverables, schedule, and scoring rubric.
+                    {handbook.challengeId === 'innovative-design'
+                      ? 'Download official deliverables, schedule, and scoring rubric.'
+                      : 'Official challenge guidelines and problem statements will be released shortly.'}
                   </span>
                 </div>
               </div>
 
-              <a
-                href={handbook.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3.5 py-2 rounded-lg bg-black text-white hover:bg-[#ff9900] hover:text-black font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-              >
-                <span>View Handbook</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              {handbook.challengeId === 'innovative-design' ? (
+                <a
+                  href={handbook.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-2 rounded-lg bg-black text-white hover:bg-[#ff9900] hover:text-black font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                >
+                  <span>View Handbook</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              ) : (
+                <div className="px-3.5 py-2 rounded-lg bg-zinc-100 border-2 border-black/30 text-zinc-800 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shrink-0 shadow-xs">
+                  <Clock className="w-3.5 h-3.5 text-zinc-500" />
+                  <span>Will be released shortly</span>
+                </div>
+              )}
             </div>
           )}
         </div>

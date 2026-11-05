@@ -6,7 +6,8 @@ export interface HandbookItem {
   week: 1 | 2;
   dates: string;
   link: string;
-  status: 'Available' | 'Official Rulebook';
+  status: 'Available' | 'Official Rulebook' | 'Coming Soon';
+  isAvailable?: boolean;
   teamSize: string;
   eligibility: string;
   deliverables: string[];
@@ -104,6 +105,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     dates: 'November 7-8',
     link: 'https://docs.google.com/document/d/1ivVa401F6uAUkmCTTLpo6ED5XkZYSbEKKe3FRygw8Xc/edit?usp=sharing',
     status: 'Available',
+    isAvailable: true,
     teamSize: '6 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -124,8 +126,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Communications',
     week: 1,
     dates: 'November 7-8',
-    link: 'https://lasengsoc.com/s/YEC-Communications-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -141,11 +144,12 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     id: 'handbook-debate',
     challengeId: 'debate',
     title: 'Debate Handbook',
-    challengeName: 'Parliamentary Debate',
+    challengeName: 'Debate',
     week: 1,
     dates: 'November 7-8',
-    link: 'https://lasengsoc.com/s/YEC-Debate-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -164,8 +168,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Junior Design',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Junior-Design-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '4 members maximum',
     eligibility: '1st & 2nd Year Undergraduates',
     deliverables: [
@@ -184,8 +189,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Senior Design',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Senior-Design-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '4 members maximum',
     eligibility: '3rd, 4th & Final Year Undergraduates',
     deliverables: [
@@ -204,8 +210,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Consulting',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Consulting-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '4 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -224,8 +231,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Re-Engineering',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Re-Engineering-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -244,8 +252,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Programming',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Programming-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '4 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
@@ -264,8 +273,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Bio-Engineering',
     week: 2,
     dates: 'November 14-15',
-    link: 'https://lasengsoc.com/s/YEC-Bio-Engineering-Rulebook.pdf',
-    status: 'Official Rulebook',
+    link: '#',
+    status: 'Coming Soon',
+    isAvailable: false,
     teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
