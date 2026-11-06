@@ -1,6 +1,6 @@
 import React from 'react';
 import { TICKET_LINKS, COMPETITIONS } from '../data/yecData';
-import { X, Calendar, MapPin, ExternalLink, CheckCircle } from 'lucide-react';
+import { X, Calendar, MapPin, ExternalLink, CheckCircle, XCircle } from 'lucide-react';
 
 interface TicketModalProps {
   week: number | null;
@@ -62,14 +62,35 @@ export const TicketModal: React.FC<TicketModalProps> = ({ week, onClose }) => {
               Featured Categories for Week {week}:
             </h4>
             <div className="space-y-2">
-              {comps.map((c) => (
-                <div key={c.id} className="flex items-start gap-2 text-sm text-zinc-800 p-2 rounded-lg bg-zinc-50 border border-zinc-200 hover:border-black transition-colors">
-                  <CheckCircle className="w-4 h-4 text-[#39ae8a] shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-zinc-950">{c.name}</strong>
+              {comps.map((c) => {
+                const isCancelled = Boolean(c.isCancelled || c.id === 'communication');
+                return (
+                  <div
+                    key={c.id}
+                    className={`flex items-start gap-2 text-sm p-2 rounded-lg border transition-colors ${
+                      isCancelled
+                        ? 'bg-red-50/70 border-red-200 text-zinc-600'
+                        : 'bg-zinc-50 border-zinc-200 hover:border-black text-zinc-800'
+                    }`}
+                  >
+                    {isCancelled ? (
+                      <XCircle className="w-4 h-4 text-[#e31837] shrink-0 mt-0.5" />
+                    ) : (
+                      <CheckCircle className="w-4 h-4 text-[#39ae8a] shrink-0 mt-0.5" />
+                    )}
+                    <div className="flex items-center gap-2">
+                      <strong className={`text-zinc-950 ${isCancelled ? 'line-through text-zinc-500' : ''}`}>
+                        {c.name}
+                      </strong>
+                      {isCancelled && (
+                        <span className="px-1.5 py-0.2 rounded bg-[#e31837] text-white text-[10px] font-black uppercase">
+                          Cancelled
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

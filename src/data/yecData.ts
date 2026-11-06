@@ -63,7 +63,9 @@ export const COMPETITIONS: Competition[] = [
     eligibleYears: 'Undergraduate Students (All Years)',
     qualification: 'Winners represent Lassonde at OEC Engineering Communications',
     details: 'Presenting complex technical concepts to non-technical stakeholders and regulatory bodies with clear storytelling, visual aids, and rigorous scientific basis.',
-    room: 'DB 0004 & 0009'
+    room: 'DB 0004 & 0009',
+    isCancelled: true,
+    cancelledReason: 'Communications has been cancelled. Check out Debate or Innovative Design.'
   },
   {
     id: 'debate',

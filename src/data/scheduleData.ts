@@ -28,6 +28,7 @@ export interface WeekScheduleDetails {
     name: string;
     room: string;
     id: string;
+    isCancelled?: boolean;
   }[];
 }
 
@@ -85,7 +86,7 @@ export const SCHEDULE_DATA: WeekScheduleDetails[] = [
       details: "Queen's workshop will be held in DB 0006 for the passport to potentially qualify for OEC."
     },
     competitions: [
-      { id: 'communication', name: 'Communications', room: 'DB 0004 and 0009' },
+      { id: 'communication', name: 'Communications (Cancelled)', room: 'DB 0004 & 0009', isCancelled: true },
       { id: 'debate', name: 'Debate', room: 'DB 0006' },
       { id: 'innovative-design', name: 'Innovative Design', room: 'DB 0011 and 0013' }
     ]

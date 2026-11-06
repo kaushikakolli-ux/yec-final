@@ -1,6 +1,6 @@
 import React from 'react';
 import { Competition } from '../types';
-import { X, Users, Calendar, BookOpen, ArrowUpRight, MapPin, Clock } from 'lucide-react';
+import { X, Users, Calendar, BookOpen, ArrowUpRight, MapPin, Clock, AlertOctagon, AlertTriangle } from 'lucide-react';
 import { HANDBOOKS_DATA } from '../data/handbooksData';
 
 interface CompetitionDetailModalProps {
@@ -24,18 +24,24 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
         <div
           className="flex items-center justify-between px-6 py-4 border-b-[3px] border-black"
           style={{
-            backgroundColor: competition.week === 1 ? '#fed7aa' : '#a7e4d2'
+            backgroundColor: competition.isCancelled
+              ? '#fee2e2'
+              : competition.week === 1
+              ? '#fed7aa'
+              : '#a7e4d2'
           }}
         >
           <div className="flex items-center gap-2">
             <span
               className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border-2 border-black ${
-                competition.week === 1
+                competition.isCancelled
+                  ? 'bg-[#e31837] text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
+                  : competition.week === 1
                   ? 'bg-[#ff9900] text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
                   : 'bg-[#39ae8a] text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
               }`}
             >
-              {competition.weekLabel}
+              {competition.isCancelled ? 'CANCELLED DIVISION' : competition.weekLabel}
             </span>
             <span className="text-xs font-black uppercase text-zinc-800 tracking-wider">Dates: {competition.dates}</span>
           </div>
@@ -52,18 +58,56 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
 
         {/* Modal Scrollable Body */}
         <div className="overflow-y-auto p-6 space-y-6">
+          {/* Prominent Cancellation Notice Banner if Cancelled */}
+          {competition.isCancelled && (
+            <div className="p-4 rounded-xl border-[3px] border-red-600 bg-red-50 text-red-950 flex items-start gap-3.5 shadow-[4px_4px_0px_0px_rgba(227,24,55,1)]">
+              <div className="p-2 rounded-lg bg-[#e31837] text-white shrink-0 shadow-sm mt-0.5">
+                <AlertOctagon className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-display text-lg font-black uppercase tracking-wide text-[#e31837]">
+                  Competition Division Cancelled
+                </h4>
+                <p className="text-sm font-semibold text-red-900 mt-1 leading-relaxed">
+                  Communications has been cancelled. Check out Debate or Innovative Design.
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Banner Image & Title */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-lg bg-zinc-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-            <img
-              src={competition.image}
-              alt={competition.name}
-              className="w-32 sm:w-44 h-auto object-contain shrink-0"
-              referrerPolicy="no-referrer"
-            />
-            <div className="text-center sm:text-left">
-              <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wide text-black mb-1">
-                {competition.name}
-              </h3>
+          <div className="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-lg bg-zinc-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+            <div className="relative w-32 sm:w-44 h-28 sm:h-36 flex items-center justify-center shrink-0">
+              <img
+                src={competition.image}
+                alt={competition.name}
+                className={`max-h-full max-w-full object-contain ${
+                  competition.isCancelled ? 'grayscale opacity-35 contrast-125' : ''
+                }`}
+                referrerPolicy="no-referrer"
+              />
+              {competition.isCancelled && (
+                <div className="absolute inset-0 flex items-center justify-center p-1">
+                  <img
+                    src="/competitions/cancelled-stamp.svg"
+                    alt="Cancelled"
+                    className="w-full drop-shadow-md transform -rotate-10 pointer-events-none select-none"
+                  />
+                </div>
+              )}
+            </div>
+
+            <div className="text-center sm:text-left flex-1">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 className="font-display text-3xl sm:text-4xl uppercase tracking-wide text-black">
+                  {competition.name}
+                </h3>
+                {competition.isCancelled && (
+                  <span className="px-2 py-0.5 rounded bg-[#e31837] text-white text-xs font-black uppercase tracking-wider border border-black shadow-xs">
+                    Cancelled
+                  </span>
+                )}
+              </div>
               <p className="font-body text-black text-sm leading-relaxed">
                 {competition.description}
               </p>
@@ -97,14 +141,29 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
             </div>
 
             {competition.room && (
-              <div className="sm:col-span-2 p-4 rounded-lg border-2 border-black bg-gradient-to-r from-red-50 to-amber-50 flex items-start gap-3 shadow-[3px_3px_0px_0px_#e31837]">
+              <div
+                className={`sm:col-span-2 p-4 rounded-lg border-2 border-black flex items-start gap-3 ${
+                  competition.isCancelled
+                    ? 'bg-red-50 shadow-[3px_3px_0px_0px_#e31837]'
+                    : 'bg-gradient-to-r from-red-50 to-amber-50 shadow-[3px_3px_0px_0px_#e31837]'
+                }`}
+              >
                 <MapPin className="w-5 h-5 text-[#e31837] shrink-0 mt-0.5" />
                 <div>
                   <span className="text-xs uppercase font-bold text-[#e31837] block tracking-wider">
                     Assigned Competition Room
                   </span>
                   <span className="font-black text-base text-zinc-950 font-mono">
-                    {competition.room}
+                    {competition.isCancelled ? (
+                      <>
+                        <span className="line-through text-zinc-500">{competition.room}</span>
+                        <span className="ml-2 px-2 py-0.5 rounded bg-[#e31837] text-white text-[10px] font-black uppercase">
+                          Cancelled
+                        </span>
+                      </>
+                    ) : (
+                      competition.room
+                    )}
                   </span>
                 </div>
               </div>
@@ -112,7 +171,7 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
           </div>
 
           {/* Handbook Callout Card */}
-          {handbook && (
+          {handbook && !competition.isCancelled && (
             <div className="p-4 rounded-xl border-2 border-black bg-amber-50/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
               <div className="flex items-center gap-3">
                 <BookOpen className="w-6 h-6 text-[#ff9900] shrink-0" />

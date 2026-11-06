@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HERO_ASSETS, COMPETITIONS, ABOUT_PHOTOS } from '../data/yecData';
 import { ROOMS_FOR_EVERYONE, LUNCH_BREAKDOWNS, BUILDING_LEGEND } from '../data/scheduleData';
 import { Competition } from '../types';
-import { Award, ArrowRight, ChevronLeft, ChevronRight, Shuffle, Camera, Sparkles, Play, Pause, MapPin, Utensils, AlertTriangle, Building, Info, CheckCircle2, Bookmark, Users } from 'lucide-react';
+import { Award, ArrowRight, ChevronLeft, ChevronRight, Shuffle, Camera, Sparkles, Play, Pause, MapPin, Utensils, AlertTriangle, Building, Info, CheckCircle2, Bookmark, Users, AlertOctagon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { playCameraShutterSound } from '../utils/confetti';
 
@@ -710,8 +710,9 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                 Week 1 Room Assignments:
               </span>
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono font-bold text-zinc-900">
-                <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
-                  <strong>Communications:</strong> DB 0004 & 0009
+                <span className="bg-red-50 text-red-900 px-2.5 py-1 rounded border border-red-300 flex items-center gap-1.5">
+                  <strong className="line-through text-red-700">Communications: DB 0004 & 0009</strong>
+                  <span className="px-1.5 py-0.5 rounded bg-red-600 text-white text-[10px] font-black uppercase tracking-wider">Cancelled</span>
                 </span>
                 <span className="bg-amber-50 px-2.5 py-1 rounded border border-black/20">
                   <strong>Debate:</strong> DB 0006
@@ -726,70 +727,148 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {week1Comps.map((comp, idx) => (
-                <motion.div
-                  key={comp.id}
-                  id={`comp-card-${comp.id}`}
-                  initial={{ opacity: 0, y: 35 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => onSelectCompetition(comp)}
-                  className="card-shine group cursor-pointer border-[4px] border-black bg-white rounded-xl overflow-hidden shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[8px_8px_0px_0px_#ff9900] flex flex-col focus:outline-none focus:ring-4 focus:ring-[#ff9900]"
-                  tabIndex={0}
-                  role="button"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      onSelectCompetition(comp);
-                    }
-                  }}
-                >
-                  <div className="h-52 bg-gradient-to-b from-amber-500/5 to-amber-500/10 group-hover:from-amber-500/15 group-hover:to-amber-500/25 transition-all duration-300 overflow-hidden border-b-[3px] border-black relative flex items-center justify-center p-4">
-                    <img
-                      src={comp.image}
-                      alt={comp.name}
-                      className="max-h-full max-w-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
-                      referrerPolicy="no-referrer"
-                    />
+              {week1Comps.map((comp, idx) => {
+                const isCancelled = comp.isCancelled || comp.id === 'communication';
 
-                    {/* Room Badge in Photo Area */}
-                    {comp.room && (
-                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
-                        <MapPin className="w-3.5 h-3.5 text-[#ff9900]" />
-                        <span className="font-mono text-xs font-black text-black">
-                          {comp.room}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <h4 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black group-hover:text-[#ff9900] transition-colors leading-tight">
-                          {comp.name}
-                        </h4>
-                      </div>
+                return (
+                  <motion.div
+                    key={comp.id}
+                    id={`comp-card-${comp.id}`}
+                    initial={{ opacity: 0, y: 35 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    onClick={() => onSelectCompetition(comp)}
+                    className={`card-shine group cursor-pointer border-[4px] border-black bg-white rounded-xl overflow-hidden shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] flex flex-col focus:outline-none focus:ring-4 ${
+                      isCancelled
+                        ? 'hover:shadow-[8px_8px_0px_0px_#e31837] focus:ring-[#e31837]'
+                        : 'hover:shadow-[8px_8px_0px_0px_#ff9900] focus:ring-[#ff9900]'
+                    }`}
+                    tabIndex={0}
+                    role="button"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        onSelectCompetition(comp);
+                      }
+                    }}
+                  >
+                    <div
+                      className={`h-52 overflow-hidden border-b-[3px] border-black relative flex items-center justify-center p-4 transition-all duration-300 ${
+                        isCancelled
+                          ? 'bg-zinc-100'
+                          : 'bg-gradient-to-b from-amber-500/5 to-amber-500/10 group-hover:from-amber-500/15 group-hover:to-amber-500/25'
+                      }`}
+                    >
+                      <img
+                        src={comp.image}
+                        alt={comp.name}
+                        className={`max-h-full max-w-full object-contain p-2 transition-transform duration-300 ${
+                          isCancelled
+                            ? 'grayscale contrast-125 opacity-35 group-hover:scale-105'
+                            : 'group-hover:scale-110'
+                        }`}
+                        referrerPolicy="no-referrer"
+                      />
 
-                      {/* Explicit Room Callout */}
-                      {comp.room && (
-                        <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-100/90 border border-black/20 text-xs font-mono font-bold text-black">
-                          <MapPin className="w-3 h-3 text-[#ff9900]" />
-                          <span>Room: {comp.room}</span>
+                      {/* Prominent Appealing CANCELLED Rubber Stamp Graphic Overlay */}
+                      {isCancelled && (
+                        <div className="absolute inset-0 z-20 flex items-center justify-center p-3 bg-red-950/15 backdrop-blur-[1px]">
+                          <img
+                            src="/competitions/cancelled-stamp.svg"
+                            alt="Competition Cancelled"
+                            className="w-[88%] max-w-[280px] drop-shadow-[0_6px_14px_rgba(0,0,0,0.35)] transform -rotate-10 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 pointer-events-none select-none"
+                          />
                         </div>
                       )}
 
-                      <p className="text-zinc-800 text-sm leading-relaxed line-clamp-4 font-medium">
-                        {comp.description}
-                      </p>
+                      {/* Room Badge / Cancelled Pill in Photo Area */}
+                      {isCancelled ? (
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#e31837] text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-30">
+                          <AlertOctagon className="w-3.5 h-3.5" />
+                          <span className="font-mono text-xs font-black uppercase tracking-wider">
+                            Cancelled
+                          </span>
+                        </div>
+                      ) : (
+                        comp.room && (
+                          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
+                            <MapPin className="w-3.5 h-3.5 text-[#ff9900]" />
+                            <span className="font-mono text-xs font-black text-black">
+                              {comp.room}
+                            </span>
+                          </div>
+                        )
+                      )}
                     </div>
-                    <div className="mt-5 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-black text-black">
-                      <span className="text-[#ff9900] group-hover:underline">Click to view details</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+
+                    <div className="p-5 flex-1 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <h4
+                            className={`font-display text-2xl sm:text-3xl font-black uppercase tracking-tight leading-tight transition-colors ${
+                              isCancelled
+                                ? 'text-zinc-700 group-hover:text-[#e31837]'
+                                : 'text-black group-hover:text-[#ff9900]'
+                            }`}
+                          >
+                            {comp.name}
+                          </h4>
+                          {isCancelled && (
+                            <span className="px-2 py-0.5 rounded bg-[#e31837] text-white text-[10px] font-black uppercase tracking-wider border border-black shadow-xs shrink-0">
+                              Cancelled
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Explicit Room Callout */}
+                        {comp.room && (
+                          isCancelled ? (
+                            <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-red-50 border border-red-300 text-xs font-mono font-bold text-red-700">
+                              <span className="line-through">Room: {comp.room}</span>
+                              <span className="text-[10px] uppercase font-black">(Cancelled)</span>
+                            </div>
+                          ) : (
+                            <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-100/90 border border-black/20 text-xs font-mono font-bold text-black">
+                              <MapPin className="w-3 h-3 text-[#ff9900]" />
+                              <span>Room: {comp.room}</span>
+                            </div>
+                          )
+                        )}
+
+                        {/* Cancellation Banner or Description */}
+                        {isCancelled ? (
+                          <div className="mb-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 text-xs text-red-900 font-semibold leading-relaxed">
+                            <p className="font-bold text-red-900 mb-1 flex items-center gap-1.5">
+                              <AlertTriangle className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                              <span>Division Cancelled for 2026/2027</span>
+                            </p>
+                            Communications has been cancelled. Check out Debate or Innovative Design.
+                          </div>
+                        ) : (
+                          <p className="text-zinc-800 text-sm leading-relaxed line-clamp-4 font-medium">
+                            {comp.description}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="mt-5 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-black">
+                        {isCancelled ? (
+                          <>
+                            <span className="text-red-600 group-hover:underline">View cancellation notice</span>
+                            <ArrowRight className="w-4 h-4 text-red-600 transform group-hover:translate-x-1.5 transition-transform" />
+                          </>
+                        ) : (
+                          <>
+                            <span className="text-[#ff9900] group-hover:underline">Click to view details</span>
+                            <ArrowRight className="w-4 h-4 text-black transform group-hover:translate-x-1.5 transition-transform" />
+                          </>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
 

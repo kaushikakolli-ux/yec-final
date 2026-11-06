@@ -11,6 +11,8 @@ export interface Competition {
   qualification: string;
   details: string;
   room?: string;
+  isCancelled?: boolean;
+  cancelledReason?: string;
 }
 
 export interface TeamMember {

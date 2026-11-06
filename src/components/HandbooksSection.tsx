@@ -22,7 +22,9 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPendingHandbook, setSelectedPendingHandbook] = useState<HandbookItem | null>(null);
 
-  const filteredHandbooks = HANDBOOKS_DATA.filter((item) => {
+  const activeHandbooks = HANDBOOKS_DATA.filter((item) => !item.isCancelled);
+
+  const filteredHandbooks = activeHandbooks.filter((item) => {
     const matchesWeek = selectedWeekFilter === 'all' || item.week === selectedWeekFilter;
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -46,7 +48,7 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
             <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black flex items-center gap-2">
               <span>Handbooks</span>
               <span className="text-xs font-bold text-zinc-600 bg-zinc-200 px-2 py-0.5 rounded-full">
-                {HANDBOOKS_DATA.length}
+                {activeHandbooks.length}
               </span>
             </h2>
             <p className="text-xs sm:text-sm text-zinc-600 font-medium">
@@ -181,32 +183,48 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
                 title={`${item.title} - Will be released shortly`}
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-100 border border-black flex items-center justify-center shrink-0 group-hover:bg-zinc-200 transition-colors">
-                    <BookOpen className="w-4 h-4 text-zinc-600" />
+                  <div className={`w-8 h-8 rounded-lg border flex items-center justify-center shrink-0 transition-colors ${
+                    item.isCancelled ? 'bg-red-50 border-red-300' : 'bg-zinc-100 border-black group-hover:bg-zinc-200'
+                  }`}>
+                    <BookOpen className={`w-4 h-4 ${item.isCancelled ? 'text-red-500' : 'text-zinc-600'}`} />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5 mb-0.5">
                       <span
                         className={`text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-black ${
-                          item.week === 1 ? 'bg-[#ff9900] text-black' : 'bg-[#39ae8a] text-white'
+                          item.isCancelled
+                            ? 'bg-[#e31837] text-white'
+                            : item.week === 1
+                            ? 'bg-[#ff9900] text-black'
+                            : 'bg-[#39ae8a] text-white'
                         }`}
                       >
                         Week {item.week}
                       </span>
-                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 border border-zinc-300 text-zinc-600">
-                        Pending
+                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${
+                        item.isCancelled
+                          ? 'bg-red-100 border-red-300 text-red-700'
+                          : 'bg-zinc-100 border-zinc-300 text-zinc-600'
+                      }`}>
+                        {item.isCancelled ? 'Cancelled' : 'Pending'}
                       </span>
                     </div>
-                    <h3 className="font-display text-sm font-black text-black uppercase tracking-tight group-hover:text-zinc-700 transition-colors truncate">
+                    <h3 className={`font-display text-sm font-black uppercase tracking-tight transition-colors truncate ${
+                      item.isCancelled ? 'text-zinc-400 line-through' : 'text-black group-hover:text-zinc-700'
+                    }`}>
                       {item.title}
                     </h3>
                   </div>
                 </div>
 
-                <div className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-zinc-100 group-hover:bg-amber-100 group-hover:text-amber-900 border border-black/30 transition-colors">
-                  <Clock className="w-3.5 h-3.5 text-zinc-500 group-hover:text-amber-700" />
+                <div className={`shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg border transition-colors ${
+                  item.isCancelled
+                    ? 'bg-red-50 text-red-700 border-red-300'
+                    : 'bg-zinc-100 group-hover:bg-amber-100 group-hover:text-amber-900 border-black/30'
+                }`}>
+                  <Clock className={`w-3.5 h-3.5 ${item.isCancelled ? 'text-red-500' : 'text-zinc-500 group-hover:text-amber-700'}`} />
                   <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider hidden sm:inline">
-                    Release Soon
+                    {item.isCancelled ? 'Cancelled' : 'Release Soon'}
                   </span>
                 </div>
               </motion.button>

@@ -6,8 +6,9 @@ export interface HandbookItem {
   week: 1 | 2;
   dates: string;
   link: string;
-  status: 'Available' | 'Official Rulebook' | 'Coming Soon';
+  status: 'Available' | 'Official Rulebook' | 'Coming Soon' | 'Cancelled';
   isAvailable?: boolean;
+  isCancelled?: boolean;
   teamSize: string;
   eligibility: string;
   deliverables: string[];
@@ -127,8 +128,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     week: 1,
     dates: 'November 7-8',
     link: '#',
-    status: 'Coming Soon',
+    status: 'Cancelled',
     isAvailable: false,
+    isCancelled: true,
     teamSize: '2 members maximum',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [

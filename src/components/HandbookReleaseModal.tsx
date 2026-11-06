@@ -58,6 +58,11 @@ export const HandbookReleaseModal: React.FC<HandbookReleaseModalProps> = ({ hand
               <span className="font-display text-xs sm:text-sm font-black uppercase tracking-wider text-black">
                 {handbook.title}
               </span>
+              {handbook.isCancelled && (
+                <span className="px-1.5 py-0.5 rounded bg-black text-white text-[10px] font-black uppercase">
+                  Cancelled
+                </span>
+              )}
             </div>
             <button
               type="button"
@@ -75,22 +80,45 @@ export const HandbookReleaseModal: React.FC<HandbookReleaseModalProps> = ({ hand
 
           {/* Body Content */}
           <div className="p-6 sm:p-8 flex flex-col items-center justify-center space-y-4">
-            <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-              <Clock className="w-7 h-7 text-[#ff9900]" />
-            </div>
+            {handbook.isCancelled ? (
+              <>
+                <div className="w-14 h-14 rounded-2xl bg-red-100 border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                  <X className="w-7 h-7 text-[#e31837]" />
+                </div>
 
-            <div>
-              <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 border border-black text-[11px] font-black uppercase tracking-wider text-zinc-700 mb-2">
-                Challenge Release Notice
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black">
-                Will be released shortly
-              </h3>
-            </div>
+                <div>
+                  <span className="inline-block px-3 py-1 rounded-full bg-red-100 border border-black text-[11px] font-black uppercase tracking-wider text-red-700 mb-2">
+                    Division Cancelled
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black">
+                    Competition Cancelled
+                  </h3>
+                </div>
 
-            <p className="text-xs sm:text-sm text-zinc-600 font-medium max-w-sm leading-relaxed">
-              The official <strong>{handbook.challengeName}</strong> handbook will be released shortly.
-            </p>
+                <p className="text-xs sm:text-sm text-zinc-700 font-medium max-w-sm leading-relaxed">
+                  Communications has been cancelled. Check out Debate or Innovative Design.
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                  <Clock className="w-7 h-7 text-[#ff9900]" />
+                </div>
+
+                <div>
+                  <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 border border-black text-[11px] font-black uppercase tracking-wider text-zinc-700 mb-2">
+                    Challenge Release Notice
+                  </span>
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black">
+                    Will be released shortly
+                  </h3>
+                </div>
+
+                <p className="text-xs sm:text-sm text-zinc-600 font-medium max-w-sm leading-relaxed">
+                  The official <strong>{handbook.challengeName}</strong> handbook will be released shortly.
+                </p>
+              </>
+            )}
 
             <div className="pt-2 w-full flex flex-col sm:flex-row items-center justify-center gap-2.5">
               <a
