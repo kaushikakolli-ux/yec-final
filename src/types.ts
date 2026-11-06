@@ -46,6 +46,7 @@ export interface Sponsor {
   industry: string;
   description: string;
   websiteUrl: string;
+  yearEstablished?: string | number;
   tier?: string;
   tierColor?: string;
   tagline?: string;

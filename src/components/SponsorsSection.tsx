@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SPONSORS_2026_2027 } from '../data/sponsorsData';
+import { Sponsor } from '../types';
 import { SponsorLogo } from './SponsorLogo';
-import { Handshake, ArrowUpRight, Sparkles, Star } from 'lucide-react';
+import { SponsorModal } from './SponsorModal';
+import { Handshake, ArrowUpRight, Sparkles, Star, Calendar, Info } from 'lucide-react';
 import { motion } from 'motion/react';
 import { playAudioBeep } from '../utils/confetti';
 
 // Organic tilt angles for pinboard
-const DEFAULT_TILT_ANGLES = [-2.5, 2.0, -3.0, 2.5, -1.8, 2.8];
+const DEFAULT_TILT_ANGLES = [-2.5, 2.0, -3.0, 2.5, -1.8, 2.8, -2.0, 2.2];
 
 export const SponsorsSection: React.FC = () => {
   const sponsors = SPONSORS_2026_2027;
+  const [selectedSponsor, setSelectedSponsor] = useState<Sponsor | null>(null);
 
   // Brand colors cycle
   const getBrandColor = (index: number) => {
@@ -17,6 +20,20 @@ export const SponsorsSection: React.FC = () => {
     if (cycle === 0) return '#ff9900';
     if (cycle === 1) return '#39ae8a';
     return '#e31837';
+  };
+
+  const currentIndex = selectedSponsor ? sponsors.findIndex(s => s.id === selectedSponsor.id) : -1;
+  const handleNext = () => {
+    if (currentIndex >= 0) {
+      const nextIndex = (currentIndex + 1) % sponsors.length;
+      setSelectedSponsor(sponsors[nextIndex]);
+    }
+  };
+  const handlePrev = () => {
+    if (currentIndex >= 0) {
+      const prevIndex = (currentIndex - 1 + sponsors.length) % sponsors.length;
+      setSelectedSponsor(sponsors[prevIndex]);
+    }
   };
 
   return (
@@ -78,7 +95,7 @@ export const SponsorsSection: React.FC = () => {
           </h2>
 
           <p className="mt-2.5 sm:mt-3 text-sm sm:text-base md:text-lg text-zinc-700 max-w-2xl font-bold text-center leading-relaxed">
-            Explore our valued corporate, industry, and community partners powering YEC 2026/2027.
+            Explore our valued industry partners and student engineering organizations powering YEC 2026/2027. Click any card to read their story!
           </p>
 
           {/* Centered Partner CTA Button */}
@@ -93,13 +110,13 @@ export const SponsorsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Polaroid Pinboard Showcase - Pure Logo & Name Focus */}
+        {/* Polaroid Pinboard Showcase - Pure Logo & Name Focus + Rich Modals */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 p-5 sm:p-8 md:p-10 rounded-2xl border-[4px] border-black bg-[#f6f1e8] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 p-5 sm:p-7 md:p-8 rounded-2xl border-[4px] border-black bg-[#f6f1e8] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden"
         >
           {/* Engineering drafting blueprint grid texture */}
           <div
@@ -118,37 +135,38 @@ export const SponsorsSection: React.FC = () => {
             const isExternal = Boolean(sponsor.websiteUrl && sponsor.websiteUrl.startsWith('http'));
 
             return (
-              <motion.a
+              <motion.div
                 key={sponsor.id}
                 id={`sponsor-polaroid-${index}`}
-                href={sponsor.websiteUrl || '#packages-section'}
-                target={isExternal ? '_blank' : undefined}
-                rel={isExternal ? 'noopener noreferrer' : undefined}
                 initial={{ opacity: 0, y: 25, rotate: baseAngle }}
                 whileInView={{ opacity: 1, y: 0, rotate: baseAngle }}
                 viewport={{ once: true }}
                 whileHover={{
                   rotate: 0,
-                  scale: 1.05,
-                  y: -10,
+                  scale: 1.04,
+                  y: -8,
                   zIndex: 35,
                   transition: { type: 'spring', stiffness: 400, damping: 18 }
                 }}
                 whileTap={{
-                  scale: 0.96,
+                  scale: 0.97,
                   rotate: -1,
                   transition: { duration: 0.1 }
                 }}
-                onClick={(e) => {
-                  playAudioBeep(480 + index * 60, 'triangle', 0.12);
-                  if (!isExternal && sponsor.websiteUrl && sponsor.websiteUrl.startsWith('#')) {
+                onClick={() => {
+                  playAudioBeep(480 + index * 50, 'triangle', 0.12);
+                  setSelectedSponsor(sponsor);
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    const el = document.getElementById(sponsor.websiteUrl.substring(1));
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    setSelectedSponsor(sponsor);
                   }
                 }}
-                aria-label={`Sponsor: ${sponsor.name}`}
-                className="group relative bg-white border-[3px] border-black rounded-xl p-4 sm:p-5 pb-5 sm:pb-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_var(--hover-color)] transition-all duration-300 cursor-pointer select-none flex flex-col justify-between no-underline block"
+                aria-label={`View sponsor details for ${sponsor.name}`}
+                className="group relative bg-white border-[3px] border-black rounded-xl p-4 sm:p-4.5 pb-4.5 sm:pb-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_var(--hover-color)] transition-all duration-300 cursor-pointer select-none flex flex-col justify-between"
                 style={{
                   ['--hover-color' as string]: brandColor
                 }}
@@ -166,12 +184,22 @@ export const SponsorsSection: React.FC = () => {
                   <div className="w-2.5 h-2.5 rounded-full bg-black/85 shadow-sm" />
                 </div>
 
+                {/* Year Established Badge in Corner if available */}
+                {sponsor.yearEstablished && (
+                  <div className="absolute top-3.5 right-3.5 z-20">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-mono font-black px-2 py-0.5 rounded-md bg-black text-white shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
+                      <Calendar className="w-2.5 h-2.5 text-[#ff9900]" />
+                      <span>Est. {sponsor.yearEstablished}</span>
+                    </span>
+                  </div>
+                )}
+
                 {/* Expanded Logo Showcase Frame - logo takes up the whole focus area */}
-                <div className="card-shine relative w-full h-44 sm:h-52 md:h-56 rounded-lg overflow-hidden bg-white border-2 border-black/30 p-4 sm:p-6 flex items-center justify-center shadow-inner group-hover:border-black transition-colors duration-300">
+                <div className="card-shine relative w-full h-40 sm:h-44 md:h-48 rounded-lg overflow-hidden bg-white border-2 border-black/30 p-4 sm:p-5 flex items-center justify-center shadow-inner group-hover:border-black transition-colors duration-300 mt-2">
                   <SponsorLogo
                     logoKey={sponsor.logo}
                     size="full"
-                    className="max-h-full max-w-full group-hover:scale-108 transition-transform duration-300 drop-shadow-sm"
+                    className="max-h-full max-w-full group-hover:scale-106 transition-transform duration-300 drop-shadow-sm"
                   />
 
                   {/* Playful sparkle badge in corner on hover */}
@@ -180,20 +208,52 @@ export const SponsorsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Polaroid Chin: Sponsor Name and link indicator */}
-                <div className="mt-3 pt-1 flex items-center justify-center text-center gap-1.5">
-                  <h3 className="font-display text-lg sm:text-xl font-black uppercase tracking-tight text-black leading-tight group-hover:text-[#ff9900] transition-colors truncate">
-                    {sponsor.name}
-                  </h3>
-                  {isExternal && (
-                    <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
-                  )}
+                {/* Polaroid Chin: Sponsor Name, Details Prompt & Website Jump */}
+                <div className="mt-3 pt-1 flex flex-col gap-1.5">
+                  <div className="flex items-start justify-between gap-1.5">
+                    <h3 className="font-display text-base sm:text-lg font-black uppercase tracking-tight text-black leading-tight group-hover:text-[#ff9900] transition-colors line-clamp-2">
+                      {sponsor.name}
+                    </h3>
+                  </div>
+
+                  <p className="text-[11px] font-medium text-zinc-600 line-clamp-2 leading-tight">
+                    {sponsor.industry}
+                  </p>
+
+                  <div className="mt-1 pt-1.5 border-t border-zinc-200 flex items-center justify-between text-xs">
+                    <span className="inline-flex items-center gap-1 font-bold text-black group-hover:text-[#ff9900] transition-colors text-[11px] uppercase tracking-wider">
+                      <Info className="w-3 h-3 text-[#ff9900]" />
+                      <span>About Club</span>
+                    </span>
+
+                    {isExternal && (
+                      <a
+                        href={sponsor.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-0.5 text-[10px] font-bold text-zinc-600 hover:text-black hover:underline"
+                        title="Visit official website"
+                      >
+                        <span>Website</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </motion.a>
+              </motion.div>
             );
           })}
         </motion.div>
       </div>
+
+      {/* Interactive Detail Modal for Sponsors & Engineering Clubs */}
+      <SponsorModal
+        sponsor={selectedSponsor}
+        onClose={() => setSelectedSponsor(null)}
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
     </section>
   );
 };

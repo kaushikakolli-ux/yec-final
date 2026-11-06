@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Sponsor } from '../types';
 import { SponsorLogo } from './SponsorLogo';
-import { X, MapPin, Briefcase, ExternalLink, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, MapPin, Briefcase, ExternalLink, Award, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
 interface SponsorModalProps {
   sponsor: Sponsor | null;
@@ -70,7 +70,7 @@ export const SponsorModal: React.FC<SponsorModalProps> = ({ sponsor, onClose, on
             </div>
           </div>
 
-          {/* Key Facts Pills (Location & Industry) */}
+          {/* Key Facts Pills (Location, Industry & Year Established) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="p-3.5 rounded-lg border-2 border-black bg-zinc-50 shadow-[3px_3px_0px_0px_#ff9900] flex items-start gap-3">
               <div className="p-2 rounded bg-black text-white shrink-0 mt-0.5 shadow-sm">
@@ -99,6 +99,22 @@ export const SponsorModal: React.FC<SponsorModalProps> = ({ sponsor, onClose, on
                 </span>
               </div>
             </div>
+
+            {sponsor.yearEstablished && (
+              <div className="p-3.5 rounded-lg border-2 border-black bg-zinc-50 shadow-[3px_3px_0px_0px_#e31837] flex items-start gap-3 sm:col-span-2">
+                <div className="p-2 rounded bg-black text-white shrink-0 mt-0.5 shadow-sm">
+                  <Calendar className="w-4 h-4 text-[#e31837]" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-black uppercase tracking-wider text-zinc-500 block">
+                    Established Year
+                  </span>
+                  <span className="font-bold text-sm text-zinc-900 leading-snug">
+                    Founded in {sponsor.yearEstablished}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Description Section */}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@700;900&amp;family=Google+Sans:wght@700;900&amp;family=Inter:wght@600;800;900&amp;display=swap');
+      .gdg-title { font-family: 'Google Sans', 'Product Sans', 'Inter', sans-serif; font-size: 25px; font-weight: 900; fill: #202124; letter-spacing: -0.5px; }
+      .gdg-sub { font-family: 'Google Sans', 'Product Sans', 'Inter', sans-serif; font-size: 15px; font-weight: 800; fill: #4285f4; letter-spacing: 0.5px; }
+      .gdg-tag { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; fill: #5f6368; letter-spacing: 1.5px; }
+    </style>
+    <filter id="gdgDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <g transform="translate(15, 10)">
+    <!-- Iconic Google Developer Brackets < / > -->
+    <g transform="translate(14, 24)" filter="url(#gdgDrop)">
+      <!-- Left Chevron Bracket '<' (Google Blue & Red) -->
+      <path d="M 28 8 L 8 28 L 8 36 L 28 56 L 36 48 L 20 32 L 36 16 Z" fill="#4285f4" />
+      <path d="M 8 28 L 18 18 L 24 24 L 14 34 Z" fill="#ea4335" />
+      
+      <!-- Center Slash '/' (Google Yellow) -->
+      <path d="M 46 8 L 38 14 L 46 56 L 54 50 Z" fill="#fbbc04" />
+      
+      <!-- Right Chevron Bracket '>' (Google Green) -->
+      <path d="M 56 8 L 76 28 L 76 36 L 56 56 L 48 48 L 64 32 L 48 16 Z" fill="#34a853" />
+    </g>
+
+    <!-- Typography Block -->
+    <text x="106" y="52" class="gdg-title">Google Developer</text>
+    <text x="106" y="76" class="gdg-title" fill="#ea4335">Groups</text>
+    <text x="106" y="98" class="gdg-sub">On Campus • York University</text>
+    
+    <!-- Color Bar Accent -->
+    <g transform="translate(106, 106)">
+      <rect x="0" y="0" width="35" height="3" fill="#4285f4" rx="1.5" />
+      <rect x="39" y="0" width="35" height="3" fill="#ea4335" rx="1.5" />
+      <rect x="78" y="0" width="35" height="3" fill="#fbbc04" rx="1.5" />
+      <rect x="117" y="0" width="35" height="3" fill="#34a853" rx="1.5" />
+    </g>
+
+    <text x="106" y="125" class="gdg-tag">STUDENT DEVELOPER COMMUNITY • EST. 2026</text>
+  </g>
+</svg>

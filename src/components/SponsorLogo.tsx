@@ -143,6 +143,21 @@ export const SponsorLogo: React.FC<SponsorLogoProps> = ({ logoKey, className = '
         </div>
       );
 
+    case 'ARBALEST':
+      return <img src="/sponsors/arbalest-rocketry.svg" alt="Arbalest Rocketry" className={`max-h-full max-w-full object-contain ${className}`} />;
+
+    case 'GDG':
+      return <img src="/sponsors/gdg-york.svg" alt="Google Developer Group" className={`max-h-full max-w-full object-contain ${className}`} />;
+
+    case 'BAJA':
+      return <img src="/sponsors/yorku-baja.svg" alt="YorkU Baja" className={`max-h-full max-w-full object-contain ${className}`} />;
+
+    case 'CEL':
+      return <img src="/sponsors/yorku-cel.svg" alt="Civil Engineers of Lassonde" className={`max-h-full max-w-full object-contain ${className}`} />;
+
+    case 'BIYU':
+      return <img src="/sponsors/biyu-bionics.svg" alt="BiYU Bionics" className={`max-h-full max-w-full object-contain ${className}`} />;
+
     case 'TBA':
       if (size === 'full' || size === 'xl') {
         return (
