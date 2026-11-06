@@ -54,7 +54,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-6',
     name: 'YorkU BAJA',
-    logo: 'https://i.imgur.com/mTF6xDT.png',
+    logo: 'https://i.imgur.com/gvkKDvi.png',
     location: 'York University (Bergeron Centre), Keele Campus',
     industry: 'Automotive & Off-Road Racing / Baja SAE',
     yearEstablished: 2026,
@@ -64,7 +64,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-7',
     name: 'Civil Engineers of Lassonde (YORKU CEL)',
-    logo: 'https://i.imgur.com/RgRDeVn.png',
+    logo: 'https://i.imgur.com/XxWvlfA.png',
     location: 'Lassonde School of Engineering, York University',
     industry: 'Civil & Infrastructure Engineering / Student Chapter',
     yearEstablished: 2015,
@@ -74,7 +74,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-8',
     name: 'BiYU Bionics',
-    logo: 'https://i.imgur.com/CzX6orp.png',
+    logo: 'https://i.imgur.com/3qGOon2.png',
     location: 'York University, Keele Campus',
     industry: 'Biomedical Engineering & HealthTech / Design Team',
     yearEstablished: 2026,
