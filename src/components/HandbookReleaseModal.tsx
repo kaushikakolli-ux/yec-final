@@ -88,7 +88,7 @@ export const HandbookReleaseModal: React.FC<HandbookReleaseModalProps> = ({ hand
 
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full bg-red-100 border border-black text-[11px] font-black uppercase tracking-wider text-red-700 mb-2">
-                    Division Cancelled
+                    Notice
                   </span>
                   <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-black">
                     Competition Cancelled

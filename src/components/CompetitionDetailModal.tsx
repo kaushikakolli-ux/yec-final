@@ -41,7 +41,7 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                   : 'bg-[#39ae8a] text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
               }`}
             >
-              {competition.isCancelled ? 'CANCELLED DIVISION' : competition.weekLabel}
+              {competition.isCancelled ? 'CANCELLED' : competition.weekLabel}
             </span>
             <span className="text-xs font-black uppercase text-zinc-800 tracking-wider">Dates: {competition.dates}</span>
           </div>
@@ -66,7 +66,7 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
               </div>
               <div>
                 <h4 className="font-display text-lg font-black uppercase tracking-wide text-[#e31837]">
-                  Competition Division Cancelled
+                  Competition Cancelled
                 </h4>
                 <p className="text-sm font-semibold text-red-900 mt-1 leading-relaxed">
                   Communications has been cancelled. Check out Debate or Innovative Design.
@@ -87,11 +87,11 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                 referrerPolicy="no-referrer"
               />
               {competition.isCancelled && (
-                <div className="absolute inset-0 flex items-center justify-center p-1">
+                <div className="absolute inset-0 flex items-center justify-center p-2">
                   <img
                     src="/competitions/cancelled-stamp.svg"
-                    alt="Cancelled"
-                    className="w-full drop-shadow-md transform -rotate-10 pointer-events-none select-none"
+                    alt="Cancelled Due to Low Turnout"
+                    className="w-[85%] max-w-[190px] drop-shadow-md transform -rotate-6 pointer-events-none select-none"
                   />
                 </div>
               )}

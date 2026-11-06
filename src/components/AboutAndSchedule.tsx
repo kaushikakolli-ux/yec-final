@@ -773,32 +773,23 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
 
                       {/* Prominent Appealing CANCELLED Rubber Stamp Graphic Overlay */}
                       {isCancelled && (
-                        <div className="absolute inset-0 z-20 flex items-center justify-center p-3 bg-red-950/15 backdrop-blur-[1px]">
+                        <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-red-950/15 backdrop-blur-[1px]">
                           <img
                             src="/competitions/cancelled-stamp.svg"
-                            alt="Competition Cancelled"
-                            className="w-[88%] max-w-[280px] drop-shadow-[0_6px_14px_rgba(0,0,0,0.35)] transform -rotate-10 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 pointer-events-none select-none"
+                            alt="Competition Cancelled Due to Low Turnout"
+                            className="w-[75%] max-w-[220px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] transform -rotate-6 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 pointer-events-none select-none"
                           />
                         </div>
                       )}
 
-                      {/* Room Badge / Cancelled Pill in Photo Area */}
-                      {isCancelled ? (
-                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#e31837] text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-30">
-                          <AlertOctagon className="w-3.5 h-3.5" />
-                          <span className="font-mono text-xs font-black uppercase tracking-wider">
-                            Cancelled
+                      {/* Room Badge in Photo Area (only shown for active competitions) */}
+                      {!isCancelled && comp.room && (
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
+                          <MapPin className="w-3.5 h-3.5 text-[#ff9900]" />
+                          <span className="font-mono text-xs font-black text-black">
+                            {comp.room}
                           </span>
                         </div>
-                      ) : (
-                        comp.room && (
-                          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
-                            <MapPin className="w-3.5 h-3.5 text-[#ff9900]" />
-                            <span className="font-mono text-xs font-black text-black">
-                              {comp.room}
-                            </span>
-                          </div>
-                        )
                       )}
                     </div>
 
@@ -836,14 +827,11 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                           )
                         )}
 
-                        {/* Cancellation Banner or Description */}
+                        {/* Cancellation Banner */}
                         {isCancelled ? (
-                          <div className="mb-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 text-xs text-red-900 font-semibold leading-relaxed">
-                            <p className="font-bold text-red-900 mb-1 flex items-center gap-1.5">
-                              <AlertTriangle className="w-3.5 h-3.5 text-red-600 shrink-0" />
-                              <span>Division Cancelled for 2026/2027</span>
-                            </p>
-                            Communications has been cancelled. Check out Debate or Innovative Design.
+                          <div className="mb-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 text-xs text-red-900 font-semibold leading-relaxed flex items-start gap-2">
+                            <AlertTriangle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                            <span>Communications has been cancelled. Check out Debate or Innovative Design.</span>
                           </div>
                         ) : (
                           <p className="text-zinc-800 text-sm leading-relaxed line-clamp-4 font-medium">
