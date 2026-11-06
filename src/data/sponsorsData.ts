@@ -74,7 +74,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-8',
     name: 'BiYU Bionics',
-    logo: 'https://i.imgur.com/3qGOon2.png',
+    logo: 'https://i.imgur.com/CX53HJE.png',
     location: 'York University, Keele Campus',
     industry: 'Biomedical Engineering & HealthTech / Design Team',
     yearEstablished: 2026,
