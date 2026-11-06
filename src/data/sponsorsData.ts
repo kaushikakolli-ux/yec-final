@@ -64,7 +64,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-7',
     name: 'Civil Engineers of Lassonde (YORKU CEL)',
-    logo: 'https://i.imgur.com/XxWvlfA.png',
+    logo: 'https://i.imgur.com/G4Qydm2.png',
     location: 'Lassonde School of Engineering, York University',
     industry: 'Civil & Infrastructure Engineering / Student Chapter',
     yearEstablished: 2015,
