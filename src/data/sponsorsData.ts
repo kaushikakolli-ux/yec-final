@@ -24,7 +24,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-3',
     name: 'PEO (Professional Engineers Ontario)',
-    logo: '/sponsors/peo.svg',
+    logo: 'https://i.imgur.com/wlIzZe9.png',
     location: 'Ontario, Canada',
     industry: 'Engineering Professional Regulatory Body',
     yearEstablished: 1922,
@@ -34,7 +34,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-4',
     name: 'Arbalest Rocketry',
-    logo: '/sponsors/arbalest-rocketry.svg',
+    logo: 'https://i.imgur.com/6ugMELq.png',
     location: 'York University (Bergeron Centre), Keele Campus',
     industry: 'Aerospace & High-Power Rocketry / Design Team',
     yearEstablished: 2022,
@@ -44,7 +44,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-5',
     name: 'Google Developer Group (GDG York)',
-    logo: '/sponsors/gdg-york.svg',
+    logo: 'https://i.imgur.com/gwe50UH.png',
     location: 'York University, Keele Campus',
     industry: 'Software, Cloud & AI / Student Tech Community',
     yearEstablished: 2026,
@@ -54,7 +54,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-6',
     name: 'YorkU BAJA',
-    logo: '/sponsors/yorku-baja.svg',
+    logo: 'https://i.imgur.com/mTF6xDT.png',
     location: 'York University (Bergeron Centre), Keele Campus',
     industry: 'Automotive & Off-Road Racing / Baja SAE',
     yearEstablished: 2026,
@@ -64,7 +64,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-7',
     name: 'Civil Engineers of Lassonde (YORKU CEL)',
-    logo: '/sponsors/yorku-cel.svg',
+    logo: 'blob:https://imgur.com/b7da5097-0d84-41cc-8fea-20d949362854',
     location: 'Lassonde School of Engineering, York University',
     industry: 'Civil & Infrastructure Engineering / Student Chapter',
     yearEstablished: 2015,
@@ -74,7 +74,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-8',
     name: 'BiYU Bionics',
-    logo: '/sponsors/biyu-bionics.svg',
+    logo: 'blob:https://imgur.com/be29546c-f31b-4498-8cff-cf3dabb96f0b',
     location: 'York University, Keele Campus',
     industry: 'Biomedical Engineering & HealthTech / Design Team',
     yearEstablished: 2026,
