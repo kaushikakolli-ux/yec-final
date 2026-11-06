@@ -64,7 +64,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-7',
     name: 'Civil Engineers of Lassonde (YORKU CEL)',
-    logo: 'blob:https://imgur.com/b7da5097-0d84-41cc-8fea-20d949362854',
+    logo: 'https://i.imgur.com/RgRDeVn.png',
     location: 'Lassonde School of Engineering, York University',
     industry: 'Civil & Infrastructure Engineering / Student Chapter',
     yearEstablished: 2015,
@@ -74,7 +74,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-8',
     name: 'BiYU Bionics',
-    logo: 'blob:https://imgur.com/be29546c-f31b-4498-8cff-cf3dabb96f0b',
+    logo: 'https://i.imgur.com/CzX6orp.png',
     location: 'York University, Keele Campus',
     industry: 'Biomedical Engineering & HealthTech / Design Team',
     yearEstablished: 2026,
