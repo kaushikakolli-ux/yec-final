@@ -34,7 +34,7 @@ export const SPONSORS_2026_2027: Sponsor[] = [
   {
     id: 'sponsor-4',
     name: 'Arbalest Rocketry',
-    logo: 'https://i.imgur.com/0mpajae.png',
+    logo: 'https://i.imgur.com/EmpZWpp.png',
     location: 'York University (Bergeron Centre), Keele Campus',
     industry: 'Aerospace & High-Power Rocketry / Design Team',
     yearEstablished: 2022,
