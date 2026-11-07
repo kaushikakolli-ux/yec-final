@@ -149,7 +149,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Debate',
     week: 1,
     dates: 'November 7-8',
-    link: '#',
+    link: 'https://docs.google.com/document/d/1kO6bhpgMsKv_wPV9Y-D2UDChQuD-I0Uffk_VZm1nRo8/edit?tab=t.0#heading=h.7uf3trv11yov',
     status: 'Coming Soon',
     isAvailable: false,
     teamSize: '2 members maximum',
