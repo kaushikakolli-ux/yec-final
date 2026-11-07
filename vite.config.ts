@@ -5,7 +5,21 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'serve-handbook-txt',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url && req.url.includes('Debate_2026-2027_Handbook_63fc4f66')) {
+              res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+            }
+            next();
+          });
+        }
+      }
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

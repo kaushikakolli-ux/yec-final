@@ -119,9 +119,11 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
         {/* Clean, Direct Handbook Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredHandbooks.map((item, index) => {
-            const isInnovative = item.challengeId === 'innovative-design';
+            const isAvailable = Boolean(item.isAvailable && item.link && item.link !== '#');
 
-            if (isInnovative) {
+            if (isAvailable) {
+              const weekBg = item.week === 1 ? 'bg-[#ff9900]' : 'bg-[#39ae8a] text-white';
+
               return (
                 <motion.a
                   key={item.id}
@@ -143,7 +145,7 @@ export const HandbooksSection: React.FC<HandbooksSectionProps> = () => {
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-black bg-[#ff9900] text-black">
+                        <span className={`text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-black ${weekBg}`}>
                           Week {item.week}
                         </span>
                         <span className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded border border-emerald-400 bg-emerald-100 text-emerald-800">

@@ -180,14 +180,14 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                     {handbook.title}
                   </span>
                   <span className="text-xs text-zinc-600 font-medium">
-                    {handbook.challengeId === 'innovative-design'
-                      ? 'Download official deliverables, schedule, and scoring rubric.'
+                    {handbook.isAvailable
+                      ? 'Download official deliverables, rules, schedule, and scoring rubric.'
                       : 'Official challenge guidelines and problem statements will be released shortly.'}
                   </span>
                 </div>
               </div>
 
-              {handbook.challengeId === 'innovative-design' ? (
+              {handbook.isAvailable ? (
                 <a
                   href={handbook.link}
                   target="_blank"

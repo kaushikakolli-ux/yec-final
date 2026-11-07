@@ -96,6 +96,56 @@ Penalties:
 * Absent Team Member: -25 pts
 * Formatting Not Adhered: -5 pts`;
 
+export const DEBATE_FULL_TEXT = `Hosted by the Lassonde Engineering Society, York University
+
+2026 Parliamentary Debate
+Delegate Handbook 
+
+For questions or concerns, email yec@lasengsoc.com or president@lasengsoc.com
+
+Debate Title & Sample Topics:
+Technology and Artificial Intelligence:
+* Does artificial intelligence pose a serious danger to society? 
+* Should robots or autonomous AI systems be granted legal rights? 
+* Should there be strict global regulations for AI development and LLM training data?
+* Do camera-equipped drones improve public safety or violate privacy?
+
+Environment and Space:
+* Is outer space colonization a moral imperative for humanity?
+* Should individuals be taxed directly based on their personal carbon footprint?
+* Should every new passenger vehicle sold be strictly electric?
+
+Schedule (November 7-8):
+* Saturday, Nov 7: Check-in (10:00 am), Opening Ceremonies (11:00 am), Phase 1 Prep & Brainstorming (11:30 am - 2:30 pm), Lunch (2:30 pm), Phase 2 Designing (4:00 pm - 7:00 pm), Raffle & Dinner (7:00 pm).
+* Sunday, Nov 8: Check-in (10:00 am), Phase 2 Continuation (11:00 am - 2:00 pm), Lunch & Arbalest Rocketry Workshop (2:00 pm - 3:30 pm), Presentations & Judging (3:30 pm - 6:30 pm), Awards & Closing (6:30 pm).
+
+Roles and Rules:
+* Teams: Two teams per round, each with 2 members (Government vs Opposition). Coin toss determines side selection.
+* Resolutions: Assigned by committee, revealed at start of each round with 15 minutes preparation time. Internet research is prohibited during preparation.
+* Time Allotted:
+  - First speaker of the Government: 5 minutes
+  - First speaker of the Opposition: 5 minutes
+  - Second speaker of the Government: 5 minutes
+  - Second speaker of the Opposition: 5 minutes
+  - Rebuttal by first speaker of the Opposition: 2 minutes
+  - Rebuttal by first speaker of the Government: 2 minutes
+  (15-second grace period; table pounding upon exhaustion of time)
+
+Tournament Format:
+* Single Elimination bracket with 45-minute total rounds.
+* Points of Information (POI): 15 seconds max; debater must accept at least one POI per speech.
+* Points of Procedure: Raised immediately for procedural breaches.
+* Heckling: Permitted within reason if brief and witty.
+
+Evaluation & Scoring (60 Points Total):
+* Respect for Other Team: 10 pts (5 per member)
+* Information Quality & Clarity: 10 pts (5 per member)
+* Rebuttal Relevance & Strength: 10 pts (5 per member)
+* Use of Facts / Logic: 10 pts (5 per member)
+* Organization: 10 pts (5 per member)
+* Understanding of Topic: 10 pts (5 per member)
+Penalties apply for offensive behavior (-1 to -2 pts), speaking to opponent rather than audience (-0.5 pts), or new arguments in rebuttal (-1 to -2 pts).`;
+
 export const HANDBOOKS_DATA: HandbookItem[] = [
   {
     id: 'handbook-innovative-design',
@@ -149,19 +199,22 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Debate',
     week: 1,
     dates: 'November 7-8',
-    link: 'https://docs.google.com/document/d/1kO6bhpgMsKv_wPV9Y-D2UDChQuD-I0Uffk_VZm1nRo8/edit?tab=t.0#heading=h.7uf3trv11yov',
-    status: 'Coming Soon',
-    isAvailable: false,
-    teamSize: '2 members maximum',
+    link: '/assets/aistudio/Debate_2026-2027_Handbook_63fc4f66',
+    status: 'Available',
+    isAvailable: true,
+    teamSize: '2 members per team',
     eligibility: 'All Undergraduate Engineering Years',
     deliverables: [
-      'Parliamentary Government & Opposition Rounds',
-      'Impromptu Argumentation & Rebuttal',
-      'Ethical Case Defense'
+      'Government & Opposition Speeches (5 min)',
+      'Cross-Rebuttal Speeches (2 min)',
+      'Points of Information (POI) & Heckling',
+      'Single Elimination Bracket Tournament'
     ],
     description:
-      'Comprehensive rules for parliamentary debate on impromptu resolutions regarding engineering ethics, Canadian public policy, AI governance, and societal impacts.',
-    evaluationFocus: 'Nuanced Logic, Rhetorical Persuasion, Adherence to Parliamentary Procedures'
+      'Official 2026 Parliamentary Debate Delegate Handbook. Outlines team roles, impromptu resolution guidelines (AI & Autonomous Systems, Environment & Space), speaking times, points of procedure, and scoring rubric.',
+    evaluationFocus:
+      '60 Total Points: Respect (10), Information (10), Rebuttal (10), Facts/Logic (10), Organization (10), Topic Understanding (10)',
+    fullRulebookText: DEBATE_FULL_TEXT
   },
   {
     id: 'handbook-junior-design',
