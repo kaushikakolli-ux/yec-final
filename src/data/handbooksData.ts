@@ -199,7 +199,7 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Debate',
     week: 1,
     dates: 'November 7-8',
-    link: '/assets/aistudio/Debate_2026-2027_Handbook_63fc4f66',
+    link: 'https://docs.google.com/document/d/1kO6bhpgMsKv_wPV9Y-D2UDChQuD-I0Uffk_VZm1nRo8/edit?usp=sharing',
     status: 'Available',
     isAvailable: true,
     teamSize: '2 members per team',
