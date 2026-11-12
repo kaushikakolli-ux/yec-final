@@ -123,7 +123,9 @@ export const COMPETITIONS: Competition[] = [
     eligibleYears: '3rd & 4th+ Year Undergraduates',
     qualification: 'Top team qualifies for OEC Senior Design with CEC track',
     details: 'The premier hands-on engineering build competition testing embedded systems, mechanical mechanisms, structural endurance, and sensor telemetry.',
-    room: 'BRG 220 (sandbox)'
+    room: 'BRG 220 (sandbox)',
+    isCancelled: true,
+    cancelledReason: 'Senior Design has been cancelled. Check out Junior Design, Consulting, Re-Engineering, Bio-Engineering, or Programming.'
   },
   {
     id: 'consulting',

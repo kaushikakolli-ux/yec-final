@@ -117,7 +117,7 @@ export const SCHEDULE_DATA: WeekScheduleDetails[] = [
       { id: 'programming', name: 'Programming', room: 'WSC 104' },
       { id: 'bio-engineering', name: 'Bio-Engineering', room: 'WSC 102' },
       { id: 'junior-design', name: 'Jr. Design', room: 'BRG 313' },
-      { id: 'senior-design', name: 'Sr. Design', room: 'BRG 220 (sandbox)' }
+      { id: 'senior-design', name: 'Sr. Design (Cancelled)', room: 'BRG 220 (sandbox)', isCancelled: true }
     ]
   }
 ];

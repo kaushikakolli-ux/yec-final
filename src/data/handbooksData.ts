@@ -245,8 +245,9 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     week: 2,
     dates: 'November 14-15',
     link: '#',
-    status: 'Coming Soon',
+    status: 'Cancelled',
     isAvailable: false,
+    isCancelled: true,
     teamSize: '4 members maximum',
     eligibility: '3rd, 4th & Final Year Undergraduates',
     deliverables: [

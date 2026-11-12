@@ -69,7 +69,7 @@ export const CompetitionDetailModal: React.FC<CompetitionDetailModalProps> = ({ 
                   Competition Cancelled
                 </h4>
                 <p className="text-sm font-semibold text-red-900 mt-1 leading-relaxed">
-                  Communications has been cancelled. Check out Debate or Innovative Design.
+                  {competition.cancelledReason || `${competition.name} has been cancelled.`}
                 </p>
               </div>
             </div>

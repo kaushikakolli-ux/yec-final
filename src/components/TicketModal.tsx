@@ -63,7 +63,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({ week, onClose }) => {
             </h4>
             <div className="space-y-2">
               {comps.map((c) => {
-                const isCancelled = Boolean(c.isCancelled || c.id === 'communication');
+                const isCancelled = Boolean(c.isCancelled || c.id === 'communication' || c.id === 'senior-design');
                 return (
                   <div
                     key={c.id}

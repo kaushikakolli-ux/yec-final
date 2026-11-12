@@ -904,8 +904,9 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                 <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
                   <strong>Jr. Design:</strong> BRG 313
                 </span>
-                <span className="bg-emerald-50 px-2.5 py-1 rounded border border-black/20">
-                  <strong>Sr. Design:</strong> BRG 220 (sandbox)
+                <span className="bg-red-50 text-red-900 px-2.5 py-1 rounded border border-red-300 flex items-center gap-1.5">
+                  <strong className="line-through text-red-700">Sr. Design: BRG 220 (sandbox)</strong>
+                  <span className="px-1.5 py-0.5 rounded bg-red-600 text-white text-[10px] font-black uppercase tracking-wider">Cancelled</span>
                 </span>
                 <span className="bg-teal-50 text-teal-800 px-2.5 py-1 rounded border border-teal-200">
                   <strong>Writing Centre:</strong> 125/Eatery
@@ -915,8 +916,14 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {week2Comps.map((comp, idx) => {
-                const hoverShadowColor =
-                  idx % 3 === 0 ? '#39ae8a' : idx % 3 === 1 ? '#e31837' : '#ff9900';
+                const isCancelled = Boolean(comp.isCancelled || comp.id === 'senior-design');
+                const hoverShadowColor = isCancelled
+                  ? '#e31837'
+                  : idx % 3 === 0
+                  ? '#39ae8a'
+                  : idx % 3 === 1
+                  ? '#e31837'
+                  : '#ff9900';
                 const bgTint =
                   idx % 3 === 0
                     ? 'from-emerald-500/5 to-emerald-500/10 group-hover:from-emerald-500/15 group-hover:to-emerald-500/25'
@@ -938,7 +945,11 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                     style={{
                       ['--hover-shadow' as string]: hoverShadowColor
                     }}
-                    className="card-shine group cursor-pointer border-[4px] border-black bg-white rounded-xl overflow-hidden shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] flex flex-col focus:outline-none focus:ring-4 focus:ring-[#39ae8a]"
+                    className={`card-shine group cursor-pointer border-[4px] border-black bg-white rounded-xl overflow-hidden shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] flex flex-col focus:outline-none focus:ring-4 ${
+                      isCancelled
+                        ? 'hover:shadow-[8px_8px_0px_0px_#e31837] focus:ring-[#e31837]'
+                        : 'focus:ring-[#39ae8a]'
+                    }`}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.boxShadow = `8px 8px 0px 0px ${hoverShadowColor}`;
                     }}
@@ -954,16 +965,37 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                       }
                     }}
                   >
-                    <div className={`h-48 bg-gradient-to-b ${bgTint} transition-all duration-300 overflow-hidden border-b-[3px] border-black relative flex items-center justify-center p-3`}>
+                    <div
+                      className={`h-48 overflow-hidden border-b-[3px] border-black relative flex items-center justify-center p-3 transition-all duration-300 ${
+                        isCancelled
+                          ? 'bg-zinc-100'
+                          : `bg-gradient-to-b ${bgTint}`
+                      }`}
+                    >
                       <img
                         src={comp.image}
                         alt={comp.name}
-                        className="max-h-full max-w-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
+                        className={`max-h-full max-w-full object-contain p-2 transition-transform duration-300 ${
+                          isCancelled
+                            ? 'grayscale contrast-125 opacity-35 group-hover:scale-105'
+                            : 'group-hover:scale-110'
+                        }`}
                         referrerPolicy="no-referrer"
                       />
 
-                      {/* Room Badge in Photo Area */}
-                      {comp.room && (
+                      {/* Prominent Appealing CANCELLED Rubber Stamp Graphic Overlay */}
+                      {isCancelled && (
+                        <div className="absolute inset-0 z-20 flex items-center justify-center p-4 bg-red-950/15 backdrop-blur-[1px]">
+                          <img
+                            src="/competitions/cancelled-stamp.svg"
+                            alt="Competition Cancelled Due to Low Turnout"
+                            className="w-[75%] max-w-[220px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] transform -rotate-6 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 pointer-events-none select-none"
+                          />
+                        </div>
+                      )}
+
+                      {/* Room Badge in Photo Area (only shown for active competitions) */}
+                      {!isCancelled && comp.room && (
                         <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-1.5 z-10">
                           <MapPin className="w-3.5 h-3.5 text-[#39ae8a]" />
                           <span className="font-mono text-xs font-black text-black">
@@ -972,27 +1004,66 @@ export const AboutAndSchedule: React.FC<AboutAndScheduleProps> = ({ onSelectComp
                         </div>
                       )}
                     </div>
+
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
-                        <h4 className={`font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-black mb-1 ${accentTextColor} transition-colors leading-tight`}>
-                          {comp.name}
-                        </h4>
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <h4
+                            className={`font-display text-xl sm:text-2xl font-black uppercase tracking-tight leading-tight transition-colors ${
+                              isCancelled
+                                ? 'text-zinc-700 group-hover:text-[#e31837]'
+                                : `text-black ${accentTextColor}`
+                            }`}
+                          >
+                            {comp.name}
+                          </h4>
+                          {isCancelled && (
+                            <span className="px-2 py-0.5 rounded bg-[#e31837] text-white text-[10px] font-black uppercase tracking-wider border border-black shadow-xs shrink-0">
+                              Cancelled
+                            </span>
+                          )}
+                        </div>
 
                         {/* Explicit Room Callout */}
                         {comp.room && (
-                          <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-50 border border-black/20 text-xs font-mono font-bold text-black">
-                            <MapPin className="w-3 h-3 text-[#39ae8a]" />
-                            <span>Room: {comp.room}</span>
-                          </div>
+                          isCancelled ? (
+                            <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-red-50 border border-red-300 text-xs font-mono font-bold text-red-700">
+                              <span className="line-through">Room: {comp.room}</span>
+                              <span className="text-[10px] uppercase font-black">(Cancelled)</span>
+                            </div>
+                          ) : (
+                            <div className="mb-2.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-50 border border-black/20 text-xs font-mono font-bold text-black">
+                              <MapPin className="w-3 h-3 text-[#39ae8a]" />
+                              <span>Room: {comp.room}</span>
+                            </div>
+                          )
                         )}
 
-                        <p className="text-zinc-800 text-xs leading-relaxed line-clamp-4 font-medium">
-                          {comp.description}
-                        </p>
+                        {/* Cancellation Banner */}
+                        {isCancelled ? (
+                          <div className="mb-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 text-xs text-red-900 font-semibold leading-relaxed flex items-start gap-2">
+                            <AlertTriangle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                            <span>{comp.cancelledReason || 'Senior Design has been cancelled. Check out Junior Design, Consulting, Re-Engineering, Bio-Engineering, or Programming.'}</span>
+                          </div>
+                        ) : (
+                          <p className="text-zinc-800 text-xs leading-relaxed line-clamp-4 font-medium">
+                            {comp.description}
+                          </p>
+                        )}
                       </div>
-                      <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-black text-black">
-                        <span className="text-[#39ae8a] group-hover:underline">Click to view details</span>
-                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+
+                      <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-black">
+                        {isCancelled ? (
+                          <>
+                            <span className="text-red-600 group-hover:underline">View cancellation notice</span>
+                            <ArrowRight className="w-4 h-4 text-red-600 transform group-hover:translate-x-1.5 transition-transform" />
+                          </>
+                        ) : (
+                          <>
+                            <span className="text-[#39ae8a] group-hover:underline">Click to view details</span>
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                          </>
+                        )}
                       </div>
                     </div>
                   </motion.div>
