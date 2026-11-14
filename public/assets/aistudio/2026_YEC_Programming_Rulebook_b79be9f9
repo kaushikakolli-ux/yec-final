@@ -1,0 +1,266 @@
+﻿YORK ENGINEERING COMPETITION
+Hosted by the Lassonde Engineering Society, York University
+
+
+
+
+2026-2027 YEC Programming
+Rulebook
+
+
+
+
+For any questions or concerns, please contact yec@lasengsoc.com or president@lasengsoc.com 
+
+
+
+
+Table of Contents
+
+
+Table of Contents        2
+1.0 Competition Description and Objective        2
+1.1 Team Composition and Eligibility        3
+2.0 Competition Details        3
+2.1 Resources        3
+2.2 Competition Personnel        3
+2.3 Competitor Deliverables        3
+2.3.1 Technical Details        4
+3.0 Timeline        5
+3.1 Schedule        5
+3.2 Allotted times        5
+DAY 1 FOR ALL ROOMS        5
+DAY 2 FOR ALL ROOMS        6
+4.0 Challenge        7
+Problem Statement        7
+Task        7
+Submission Requirements        7
+Presentation        8
+Allowed Resources        8
+Rubric & Penalties (Official OEC Guidelines)        8
+Official OEC Evaluation Rubric        8
+Official OEC Penalties        9
+5.0 Evaluation        10
+5.1 Judging        10
+5.2 Delivery        10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.0 Competition Description and Objective
+The goal of the programming competition is to encourage engineering students to produce a piece of readable software. The teams will use their software development and project management skills to design a solution to a posed problem. This solution will then be presented to "company executives" (the judging panel) for approval. The winning solution will not necessarily be the most technically correct but the one that has the most real-world application and is most thoroughly thought out.
+
+
+The presentation should highlight the layout, design process, management process and the development process. Components missing due to time constraints must be highlighted, and mistakes should be discussed along with plans to mitigate such problems.
+1.1 Team Composition and Eligibility
+* Team Size: Must consist of exactly 4 Members
+* Eligibility: All Competitors must be enrolled in a York Undergraduate Program. All competitors and teams must also meet the requirements outlined by the Lassonde Engineering Society.
+2.0 Competition Details
+2.1 Resources
+Competitors will present to a panel of judges in person at York University.
+Competitors are permitted to use the internet, and if the solution uses any open-source libraries, they must be credited in the presentation.
+2.2 Competition Personnel
+* The Competition Lead(s): Responsible for the implementation of the competition. The Competition Lead must be present at all of the presentations and be available to competitors and judges at any time for questions and requests.
+* Competition Director(s): Responsible for supporting the Competition Lead during the implementation of the competition. The Directors must be available to competitors and judges for questions and requests.
+* Official Timekeeper: Responsible for enforcing time limits during the presentations.
+* Judges: A minimum of three (3) judges are required to assess the problem-solving abilities, proposed solution, communication skills and team dynamics of the competitors. Judges in this category may come from a variety of backgrounds, including communications, sales and technical or software engineering experience; however, they must have programming experience.
+2.3 Competitor Deliverables
+Submission: Each team is required to submit, electronically, all the files required to present to the judges before the end of the development period.
+
+
+The files are to be submitted to this form using the naming conventions mentioned below.
+
+
+Any team experiencing technical difficulties is permitted to send the appropriately named files by email to yec@lasengsoc.com. The subject line should contain your team name enclosed in square braces, like the following example: "[TeamName] - YEC Programming Submission".
+
+
+Files you must submit:
+
+
+1. All presentations must be in PowerPoint or PDF format. Google Doc links are not acceptable and will not be submitted for judging.
+2. File naming convention: [TeamName] - SlideDeck - YEC Programming Submission
+3. The program files and any additional files mentioned in the challenge. All program files should be submitted in one zipped folder or as one GitHub repo link.
+4. File naming convention: [TeamName] - Code - YEC Programming Submission
+2.3.1 Technical Details
+* Timekeeping: Judges can ask a question at any time during the presentation. The clock will be stopped during these interruptions. To ensure all competitors stop working on the case solutions once the design time ends, competitors may not include any material in their oral presentation that is not included in their submitted presentation materials.
+* Plagiarism: Since the use of the Internet and other external resources is permitted in this competition, all information used by competitors must be referenced very carefully. Competitors are not permitted to submit work completed by anyone other than the members of their team. If they decide to recycle their own or someone else's code, it must be clearly cited in the presentation. In addition, competitors must clearly explain why and where they used recycled code in their software. The judges have the right to ask any team member to describe what a particular section of the code does at any given point during the presentation. If there is any evidence that competitors are submitting plagiarized work, the entire team will be eliminated from the competition.
+3.0 Timeline
+3.1 Schedule
+Note: The times below are based on local Toronto time.
+
+
+* Phase 1: November 14, 10:00 am - 8:00 pm
+* Phase 2: November 15, 10:00 am - 7:00 pm
+3.2 Allotted times
+
+
+DAY 1 FOR ALL ROOMS
+* 10:00 am - 11:00 am: Checking in guests (raffle numbers are given here)
+The competitors will arrive at the event area and will be checked in by two members of the organizing team at the front desk, where they will be separated into the break rooms and assigned a raffle number; this raffle number will then be used to distribute the raffle prizes at the end of the day. While the front desk leaders check the students' IDs and record team attendance, four other Team Leads will act as wayfinders and guide the arriving groups directly to the break rooms that have been assigned to them so that they can unpack and get ready before the official welcome.
+* 11:00 am - 11:30 am: Opening ceremonies
+The YEC Chair and each of the Vice Chairs will make some opening remarks. The YEC Chair will start with a welcome speech in which he sets out the main objectives of the competition, after which the Vice Chairs will go on to look at the general safety guidelines, the competition rules, the venue regulations and the criteria for judging, followed by a short question and answer session before the students are sent to their rooms.
+* 11:30 am - 2:30 pm: Phase 1 (Ice Breakers and Brainstorming)
+During this period, the competitors will have the opportunity to get to know one another, after which they will begin the first stage of the competition; this stage consists of thinking and carrying out brainstorming on the programming problem in question. The teams will start off with a short icebreaker activity lasting 15 minutes in order to define their team roles. They will then use the rest of the time to analyze the constraints, research the relevant background concepts, draw up preliminary software architectures and prepare their initial system Concept, while the Team Leads will keep an eye on the progress and provide answers to any rule queries.
+* 2:30 pm - 4:00 pm: Lunch break (Domino’s catering)
+Lunch will be provided, with Domino’s catering coming to serve it. The Catering Lead, together with the two Team Leads, will collect the delivery at the loading area by 2:15 pm and arrange the main dining area, putting in clearly marked sections for various diets such as vegetarian, halal, and gluten-free options.
+* 4:00 pm - 7:00 pm: Phase 2 (prototyping and designing)
+Following lunch, the competitors will go to their assigned rooms and start the second stage of the competition; this stage involves the creation of a Programme design or the production of a visual representation of their final project, according to the specifics of each competition. A 30-minute warning will be given by the organizers at 6:30 pm so that the teams can save their digital files and get their build areas in order.
+* 7:00 pm - 8:00 pm: (Raffling and dinner)
+The raffle will be held, and the dinner will be provided by catering. Dinner will take place in the main hall from 7:00 pm to 7:30 pm, after which the live raffle draw will be carried out by the YEC Chair, with the winning numbers being announced and the sponsor prizes given out. The day will end with a summary and some reminders about the overnight storage of the codebases and room security before everyone is dismissed.
+DAY 2 FOR ALL ROOMS
+   * 10:00 am - 11:00 am: Checking in
+Competitors will start arriving at the events area; they will be checked in by 2 members of the organizing team at the front desk and separated into break rooms. Organizers at registration will log team attendance and escort participants back to their assigned work rooms, so teams can set up their workstations for the final sprint.
+   * 11:00 am - 2:00 pm: Phase 2 continuation
+Competitors will continue to work on their project from the previous day. Teams will focus on finishing their programme, running tests, resolving final bugs, and polishing their visual slide decks. At 1:30 pm, a hard submission deadline will be enforced to collect all digital presentation files via USB or a central upload link so room laptops can be pre-loaded.
+   * 2:00 pm - 3:30 pm: Lunch and potentially club workshop
+While lunch is being served (Domino’s), Arbalest Rocketry will be hosting a workshop about a component used in the manufacturing of a rocket. Domino's pizza will be served from 2:00 pm to 2:45 pm, after which Arbalest Rocketry will lead an interactive technical presentation detailing specialized rocket manufacturing, structural components, and aerospace engineering techniques.
+   * 3:30 pm - 6:30 pm: Presentation and Judging
+All the teams will have the chance to make a visual presentation about their project, after which we will proceed to judging. Each team will present sequentially to a panel of judges following a structured format of a 10-minute live prototype demonstration or test, and a 10-minute judge Q&A session, strictly timed by a designated Team Lead in each room.
+   * 6:30 pm - 7:00 pm: Closing remarks and Closure
+The YEC team will be making some closing remarks, after which we will wrap up the competition. While Vice Chairs aggregate judge scorecards to determine award winners, all teams will gather in the main auditorium for closing speeches by the YEC Chair and Vice Chairs.
+4.0 Challenge
+Problem Statement
+Charging electric vehicles (EVs) is a real Ontario issue. A parking structure with chargers can only draw so much power at once, while the price of electricity, and the CO2 released to produce it, change every hour. Charging every car the moment it arrives is simple, but it can cost more, emit more, and leave some drivers without the charge they need. This challenge touches electrical, civil, mechanical, environmental and software engineering, and asks you to weigh economic, environmental and social trade-offs. All data you need is free, public, and supplied to you.
+Task
+You are contracted by the operator of a fictional campus parkade to develop software that schedules EV charging so that it is cheap, low-carbon and fair. Your program reads the day’s chargers, power limit, cars and hourly electricity data, and decides which car charges on which charger, in which hour, at what power. A simple version is doable in one evening; strong teams win by optimizing. 
+Inputs and Output
+Inputs (CSV):
+      * Chargers (count, max kW each) 
+      * Building power cap (kW)
+      * Cars (id, arrival hour, departure hour, kWh needed, priority flags)
+      * Hourly electricity price and CO2 intensity for Ontario. Price comes from IESO’s public hourly data. CO2 intensity is calculated by GDG on Campus York University from
+      * IESO’s hourly generator output by fuel type × standard emission factors per fuel.
+      * Teams get a ready-to-use CO2 column.
+Output contract:
+      * Your program must produce schedule.csv with exactly these columns: car_id, charger_id, hour, kW
+      * It is produced from input.csv with one command. Any language is fine (Python, Java, MATLAB, etc.).
+      * Everything else (UI, extra outputs, reports, features) is up to the team.
+      * Partial credit: rows that break a rule count as unmet charging. They don’t zero thewhole schedule.
+Tiers
+CORE. Must be finishable on Saturday evening. It needs only loops and sorting, no optimization theory, so teams from any discipline can do it.
+      * Read input.csv and write a valid schedule.csv.
+      * A simple schedule view. A timeline, table, plot or formatted spreadsheet all count.
+      * A summary of total cost, CO2 and unmet charging.
+OPTIMIZE.
+      * Weighting cost against CO2.
+      * Handling changes mid-day, e.g. a car arrives early or the power cap drops at 3 PM.
+BONUS. A polished dashboard, what-if scenarios, forecasting.
+Fairness and Priority
+      * Some cars carry flags: accessible permit, on-call staff, visitor. This rulebook does not say how flags should affect priority.
+      * One hidden test case has more demand than the parkade can supply, so not every car can be fully charged.
+      * Each team picks a priority policy and defends it in its presentation.The scorer reports unmet charging by flag but doesn’t reward any particular policy.
+      * There is no single right answer; this is the social-impact part of the challenge.
+Scoring
+Every schedule gets a combined score (lower is better):
+      * combined score = electricity cost ($) + CO2 cost + unmet-charging penalty
+      * CO2 is priced at $110 per tonne ($0.11/kg), Canada’s 2026 federal carbon price benchmark.
+      * Unmet charging costs $1.00 per kWh not delivered. That is higher than any hourly price in the challenge data, so leaving a car uncharged is never the cheap option.
+      * Your combined score on the hidden test(s) is compared against a simple greedy baseline written by GDG on Campus York University. Matching the baseline earns about half of the hidden-test points; beating it earns more (see Rubric).
+      * The scoring is objective and reproducible: you can run the same scorer on your own schedules all weekend.
+Starter Pack
+Released at the opening on Saturday, November 14:
+      * Case packet
+      * Sample inputs
+      * The validator and scorer, which teams can run all weekend hidden_tests.zip (1 to 2 input files), password-locked until 1:30 pm on Day 2
+Submission Requirements
+Your program must be able to operate on Windows 10 or 11, or macOS, and files must be submitted as an easy to run program. Any dependencies that you may require should be able to be installed by the user with minimal to no effort.
+A presentation that explains how your program works at a high level, along with any key features and bugs must be included in your presentation.
+All files are submitted as described in Section 2.3 (submission form first, then email, then USB/upload link), using the naming conventions given there.
+Presentation
+You will have a combined total of 10 minutes to present your program along with your presentation. Your presentation should consist of a high level design of how your code works, why your system should be implemented, and the priority policy your team chose and why. Judges have the ability to interrupt at any time. The judges are then given about 5 minutes to ask any specific questions about your program they may have.
+Allowed Resources
+Competitors are allowed to use the following equipment:
+      * Competitors are restricted to one laptop per team member
+      * Competitors are allowed to use any text editor (vim, emacs, Notepad++) or
+      * Integrated Development Environment (Eclipse, VS Code, Visual Studio, Jetbrains)
+      * Competitors are allowed to use any programming language
+      * Fair use of generative AI is allowed, but is restricted to specifically GitHub Copilot in assistance to writing their code. (Refer to https://education.github.com/ and click on “Get Student Benefits”)
+      * Competitors are allowed to use any online resources (i.e. API documentation, StackOverflow, etc.)
+      * All data needed for the challenge is in the starter pack. Any other free, public data sets may be used if they are cited.
+      * Every open-source library and any recycled code must be cited in the presentation (see Section 2.3.1).
+      * Everything needed is free to use. No paid APIs, services or GPUs are required.
+Use of AI
+Teams that use AI/ML in any way must submit an AI-use document (Section 2.3, file 3) listing every prompt used and the lines of code written with AI assistance. Judges evaluate this at their own discretion: for example, whether AI was used to help explain the logic of the code or to write the code. Large amounts of AI-written code will lead to a deduction of points. If a team used no AI, this is not scored and is omitted when judging.
+Penalties
+      * Submission time is Nov. 15, 2026 at 1:30 pm (Toronto time). The hidden-test output is due at 1:45 pm. Any deliverable received late loses ten (10) points for every five (5) minutes late, up to the fifty (50) maximum for Documents Received After Deadline (see Rubric).
+      * A team that does not upload a hidden-test output scores 0 of the 20 Hidden-Test Performance marks.
+      * Code must not be plagiarised. Plagiarism, including a hidden-test output that does not
+      * match a team’s submitted code, is penalized and, if confirmed, leads to elimination (see Section 2.3.1).
+      * All libraries, recycled code and outside data must be cited. Missing citations are penalized.
+      * Every team member must be present for the presentation
+Rubric
+Strategy / Algorithm (40 Marks)
+	Hidden-Test Performance: Combined score of the team’s submitted code
+on the hidden input(s), from the GDG scorer, compared against the greedy
+baseline. Matching the baseline earns about half of these marks; beating it
+earns more. The exact points scale is given in the case packet.
+
+
+	/20
+	Judges’ Assessment:
+      * Personalization & Adaptability
+      * Deliverable Compliance with Expectations
+      * User Experience
+      * Innovation & Creativity
+
+
+	/35
+	Code (35 Marks)
+	      * Readability
+      * Efficiency
+      * Structure
+      * Testing
+
+
+For teams that used AI, judges also consider the AI-use document here (see “Use of AI”)
+	/35
+	Presentation (25 Marks)
+	      * Design Process and Justification (including the team’s priority policy)
+      * Voice
+      * Articulation and Timing
+      * Visual Aids
+      * Response to Questions
+	/25
+	TOTAL SCORE
+	/100
+	
+
+Official OEC Penalties
+Infraction Description
+	Deduction
+	Plagiarism
+	-50
+	Insufficient Citation
+	-50
+	Absent Team Member
+	-50
+	Total Score
+	/100
+	5.0 Evaluation
+5.1 Judging
+Judges will use the Rubric above to evaluate both the content of the presentation and the presentation mechanics of each team. The hidden-test scores from the GDG Scoring Lead are given to the judges before presentations begin. The winning team will be one which creates software according to the given specifications, has excellent presentation skills and minimal penalties.
+Judging Order
+The document will give you the order that your team will be presenting in.
+Click on the link below to access the ‘Judging Order’ timeline [to be shared by YEC before judging]
+5.2 Delivery
+The method of delivery for this competition is a regular presentation with questions from the judges. The presentation must include a display of the software the team has developed. Competitors will be asked to open their submitted code to show its functionality during the presentation. Teams selected for a live re-run (Section 3.2, Day 2) run their submitted code on the hidden file during their presentation.
+5.3 Additional Presentation Key
+The following key points must be included at the time of the presentation:
+      * Why/how is your code efficient for the given problem statement
+      * What was the CPU/ Memory Usage
+      * Any bugs that were found during development, and how they were resolved
+Read and follow the Rubric provided thoroughly for maximum points.
+6.0 Orientation Questions
+[To be added by YEC after the opening ceremony

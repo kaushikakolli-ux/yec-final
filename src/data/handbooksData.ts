@@ -146,6 +146,143 @@ Evaluation & Scoring (60 Points Total):
 * Understanding of Topic: 10 pts (5 per member)
 Penalties apply for offensive behavior (-1 to -2 pts), speaking to opponent rather than audience (-0.5 pts), or new arguments in rebuttal (-1 to -2 pts).`;
 
+export const BIO_ENGINEERING_FULL_TEXT = `Hosted by the Lassonde Engineering Society, York University
+
+2026 YEC Bioengineering Rulebook
+
+For any questions or concerns, please contact yec@lasengsoc.com
+
+1.0 Competition Description and Objective
+Teams address a bioengineering challenge involving an older adult (Margaret, 72) requiring support with balance-related rehabilitation exercises at home. Teams apply the bioengineering design process to develop an affordable, feasible, and safe solution. Physical prototyping is optional.
+
+1.1 Team Composition and Eligibility
+* Team Size: Must consist of exactly 2 competitors.
+* Eligibility: All competitors must be York University undergraduate students. Only Engineering students can advance to the provincial level (OEC).
+
+2.0 Deliverables & Rules
+* Electronic Report (max 10 pages excluding appendices, IEEE citations): Problem statement, background research, design approach, engineering analysis & calculations, safety/risk assessment, validation plan, and conclusions.
+* Presentation Slide Deck & Live Presentation (6 minutes max + Judge Q&A): Visual aid and technical defence covering problem significance, biomedical principles, operating principle, cost estimate, safety considerations, and testing plan.
+* Prototype (Optional): Teams may demonstrate designs via CAD models, technical drawings, simulations, calculations, or optional self-funded physical prototypes.
+* File Naming Format: "[TeamName] - YEC Bioengineering [Slidedeck/Report] Submission"
+
+3.0 Timeline (Local Toronto Time)
+* Phase 1 (Application Submission): Nov 12 – Due 11:50 PM
+* Phase 2 (Opening Ceremony & Briefing): Nov 14 – 10:00 AM – 10:30 AM
+* Phase 3 (Solution Development): Nov 14, 10:30 AM – Nov 15, 1:30 PM
+* Phase 4 (Judging Period): Nov 15 – 2:00 PM – 6:30 PM
+* Phase 5 (Post Competition): Nov 15 – 6:30 PM – 7:00 PM
+
+4.0 Design Objectives
+1. Support rehabilitation for balance-related exercises
+2. Prioritize user safety and foresee fall/failure risks
+3. Remain affordable in manufacturing cost
+4. Promote accessibility for older adults with reduced mobility
+5. Demonstrate technical feasibility with engineering analysis
+6. Enable evaluation via a testing and validation plan
+
+5.0 Evaluation & Scoring (100 Points Total)
+* Proposed Solution (60 pts): Problem Definition & User Needs (10), Biomedical & Scientific Principles (10), Engineering Design & Feasibility (15), Safety & Risk Assessment (10), Cost & Accessibility (5), Testing & Validation (10)
+* Written Report (15 pts): Clarity & Organization (3), Technical Writing (2), Design Justification (5), Completeness & Compliance (5)
+* Presentation (20 pts): Clarity & Communication (5), Articulation & Time Management (3), Visual Aids (2), Q&A Technical Defence (10)
+* Innovation (5 pts): Originality & Creativity (5)
+
+Penalties: Plagiarism (-50), Insufficient Citation (-20), Document Received After Deadline (-30), Absent Team Member (-25).`;
+
+export const PROGRAMMING_FULL_TEXT = `Hosted by the Lassonde Engineering Society, York University
+
+2026-2027 YEC Programming Rulebook
+
+For any questions or concerns, please contact yec@lasengsoc.com or president@lasengsoc.com
+
+1.0 Competition Description and Objective
+Teams use software development and project management skills to build readable software that solves an EV charging scheduling problem for a fictional campus parkade—optimizing for cost, low CO2 emissions, and fairness under building power limits.
+
+1.1 Team Composition and Eligibility
+* Team Size: Must consist of exactly 4 Members.
+* Eligibility: All competitors must be enrolled in a York Undergraduate Program.
+
+2.0 Deliverables & Rules
+* Presentation Slide Deck (PowerPoint or PDF; Google Doc links not accepted): "[TeamName] - SlideDeck - YEC Programming Submission"
+* Program Files (Zipped folder or GitHub repo link, produces schedule.csv from input.csv): "[TeamName] - Code - YEC Programming Submission"
+* AI-Use Document (Required if AI/GitHub Copilot is used): Lists every prompt and lines of AI-assisted code.
+* Hard Submission Deadline: Nov 15 at 1:30 PM (hidden-test output due 1:45 PM).
+
+3.0 Timeline (November 14-15)
+* Day 1 (Nov 14, 10:00 AM - 8:00 PM): Check-in (10:00 AM), Opening Ceremonies (11:00 AM), Phase 1 Brainstorming (11:30 AM), Domino's Lunch (2:30 PM), Phase 2 Prototyping & Designing (4:00 PM), Dinner & Raffle (7:00 PM).
+* Day 2 (Nov 15, 10:00 AM - 7:00 PM): Check-in (10:00 AM), Phase 2 Final Sprint & 1:30 PM Submission (11:00 AM), Lunch & Arbalest Rocketry Workshop (2:00 PM), Presentations & Judging (3:30 PM - 10 min pitch + Q&A), Closing Remarks (6:30 PM).
+
+4.0 Challenge & Scoring Overview
+* Output Contract: schedule.csv with columns car_id, charger_id, hour, kW.
+* Combined Score (Lower is Better): electricity cost ($) + CO2 cost ($110/tonne) + unmet-charging penalty ($1.00/kWh).
+* Evaluation (100 Marks): Strategy/Algorithm (Hidden-Test Performance /20 + Judges' Assessment /35), Code Quality & Testing (/35), Presentation & Technical Defence (/25).
+* Penalties: Late submission (-10 pts per 5 min, max -50), Plagiarism (-50 / elimination), Insufficient Citation (-50), Absent Team Member (-50).`;
+
+export const JUNIOR_DESIGN_FULL_TEXT = `Hosted by the Lassonde Engineering Society, York University
+
+2026 Junior Design Delegate Handbook
+
+For any questions or concerns, email yec@lasengsoc.com or president@lasengsoc.com
+
+1.0 Competition Description and Objective
+Teams of Junior Engineering Students design and build a physical prototype to address a technical problem, then deliver an oral and digital presentation demonstrating their design process and solution.
+
+1.1 Team Composition and Eligibility
+* Team Size: Must consist of exactly 4 members.
+* Eligibility: York University undergraduates who have not yet completed 50% or more of the minimum credits required for their accredited engineering program.
+
+2.0 Deliverables & Rules
+* Physical Prototype: Built from competition shop materials (1 free hot glue gun & 1 popsicle stick provided; costs tracked for budget scoring).
+* Project Budget: Complete material cost breakdown ranked relatively against other teams.
+* Presentation Slide Deck (PPT or PDF, IEEE citations): "[Team Name] - Junior_Design_Presentation.pdf/pptx"
+* Strict Rules: No testing prototypes with eggs prior to official demonstration (-25 pts); cracking/breaking team egg early incurs -10 pts (replacement egg costs 700).
+
+3.0 Timeline (November 14-15)
+* Day 1 (Nov 14, 10:00 AM - 8:00 PM): Check-in at BRG Eatery (10:00 AM), Opening Ceremonies (11:00 AM), Phase 1 Brainstorming (11:30 AM), Domino's Lunch (2:30 PM), Phase 2 Prototyping & Designing (4:00 PM), Dinner & Raffle (7:00 PM).
+* Day 2 (Nov 15, 10:00 AM - 7:00 PM): Check-in (10:00 AM), Phase 2 Final Sprint & 1:30 PM Submission (11:00 AM), Lunch & Arbalest Rocketry Workshop (2:00 PM), Presentations & Judging (3:30 PM - 5 min presentation, 3 min live demo/test, 2 min Q&A), Closing Remarks (6:30 PM).
+
+4.0 Design Challenge
+* Task: Design, build, and test a dual-component system (launching mechanism + protective lander) to deliver a raw, large Grade A chicken egg launched from 29 inches height to a target center 80 inches away on a hard landing surface without breaking.
+* Target Zones (128" x 32"): Center Zone 72"-88" earns maximum 10 accuracy points.
+
+5.0 Evaluation & Scoring (100 Points Total)
+* Design Quality (40 pts): Feasibility (10), Versatility (10), Scalability (10), Creativity (10)
+* Testing (30 pts): Intact Egg (8; half for cracked), Price/Budget Rank (7), Launcher Undamaged in Zone (5), Landing Accuracy (10)
+* Presentation (30 pts): Voice (5), Articulation & Timing (5), Response to Questions (5), Design Process & Justification (15)
+
+Penalties: Plagiarism (DSQ), Insufficient Citation (-50), Pre-demo Prototype Testing (-25), Late Submission (-10/5min), Absent Team Member (-25), Early Egg Break (-10), School Disclosure (-10).`;
+
+export const CONSULTING_FULL_TEXT = `Hosted by the Lassonde Engineering Society, York University
+
+2026-2027 Consulting Delegate Handbook
+
+For questions or concerns, email yec@lasengsoc.com or president@lasengsoc.com
+
+1.0 Competition Description and Objective
+Competitors design a detailed consulting engineering proposal for a large-scale engineering problem and pitch it to the "client" (judges)—balancing originality, technical & economic feasibility, business, environmental, social, and ethical implications.
+
+1.1 Team Composition and Eligibility
+* Team Size: 4 competitors per team.
+* Eligibility: All four competitors must be enrolled in a York Undergraduate Engineering Program.
+
+2.0 Deliverables & Rules
+* One-Page Proposal PDF: "TEAM NAME - PROPOSAL.pdf"
+* Presentation Document (PPT, PPTX, or PDF, IEEE citations required): "TEAM NAME - PRESENTATION.ppt/pptx/pdf"
+* Submission Deadline: End of Phase 3 (1:30 PM hard submission on Day 2).
+
+3.0 Timeline (November 14-15)
+* Day 1 (Nov 14): Orientation & Initiation (10:00 AM - 4:00 PM) and Development (4:00 PM - 8:00 PM). Check-in (10:00 AM), Opening Ceremonies (11:00 AM), Phase 1 Brainstorming (11:30 AM), Domino's Lunch (2:30 PM), Phase 2 Designing (4:00 PM), Dinner & Raffle (7:00 PM).
+* Day 2 (Nov 15, 10:00 AM - 7:00 PM): Check-in (10:00 AM), Phase 3 Finalising & 1:30 PM Submission (11:00 AM), Lunch & Arbalest Rocketry Workshop (2:00 PM), Presentation & Judging (3:30 PM), Closing Remarks (6:30 PM).
+
+4.0 Problem Statement (The One – 1 Bloor Street West)
+Acting as engineering consultants for Jacobs advising Mizrahi Developments in 2020, propose vertical expansion design solutions to add additional storeys to the approved 85-storey (308.6 m) supertall design within an original $1.4B baseline budget ($583.2M fixed-price construction), given locked-in 32 rock-socketed bedrock caissons and Levels 1–9 podium steel mega-columns.
+
+5.0 Evaluation & Scoring (100 Points Total)
+* Solution (50 pts): Problem Statement (5), Design Feasibility (10), Financial Risk (5), Environmental Consideration (15), Social Consideration (10), Risk Analysis (5)
+* Report (20 pts): Appearance (5), Style (5), Presentation of Ideas (10)
+* Presentation (30 pts): Professionalism (5), Visual Aid (5), Time (5), Presentation of Ideas (15)
+
+Penalties: Plagiarism (-50), Incorrect Citation Format (-10), No Citations (-30), Late Documents (-50), Absent Teammate (-10).`;
+
 export const HANDBOOKS_DATA: HandbookItem[] = [
   {
     id: 'handbook-innovative-design',
@@ -223,19 +360,21 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Junior Design',
     week: 2,
     dates: 'November 14-15',
-    link: '#',
-    status: 'Coming Soon',
-    isAvailable: false,
-    teamSize: '4 members maximum',
-    eligibility: '1st & 2nd Year Undergraduates',
+    link: '/assets/aistudio/2027_Handbook_b48a1cb6',
+    status: 'Available',
+    isAvailable: true,
+    teamSize: '4 members per team',
+    eligibility: 'Undergraduates (<50% Engineering Program Credits)',
     deliverables: [
-      'Physical Hardware Prototype Build',
-      'Live Arena Performance Testing',
-      'Technical Design Defense'
+      'Physical Launcher & Protective Lander Prototype',
+      'Complete Shop Material Budget Breakdown',
+      'PPT / PDF Slide Deck (5-min pitch, 3-min test, 2-min Q&A)'
     ],
     description:
-      'Hardware design manual for freshmen and sophomore engineering students tasked with building a functional electro-mechanical device from mystery raw materials in a timed sprint.',
-    evaluationFocus: 'Arena Demonstration, Structural Integrity, Resource Efficiency'
+      'Official 2026 Junior Design Delegate Handbook. Teams build a dual-component launching mechanism and protective lander to deliver a raw egg across 80 inches onto a hard surface.',
+    evaluationFocus:
+      '100 Total Points: Design Quality (40), Live Egg-Drop & Launch Testing (30), Presentation & Justification (30)',
+    fullRulebookText: JUNIOR_DESIGN_FULL_TEXT
   },
   {
     id: 'handbook-senior-design',
@@ -266,19 +405,21 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Consulting',
     week: 2,
     dates: 'November 14-15',
-    link: '#',
-    status: 'Coming Soon',
-    isAvailable: false,
-    teamSize: '4 members maximum',
-    eligibility: 'All Undergraduate Engineering Years',
+    link: '/assets/aistudio/YEC_2026-2027_Consulting_Rulebook_6d02cf67',
+    status: 'Available',
+    isAvailable: true,
+    teamSize: '4 members per team',
+    eligibility: 'York Undergraduate Engineering Students',
     deliverables: [
-      'Comprehensive Feasibility Study',
-      'Financial Model & Risk Matrix',
-      'Executive Boardroom Pitch'
+      '1-Page Engineering Proposal (PDF)',
+      'Presentation Slide Deck (PPT / PDF, IEEE citations)',
+      'Client Pitch & Judge Q&A Defence'
     ],
     description:
-      'Framework for analyzing real-world municipal and industrial engineering dilemmas, formulating realistic business and technical roadmaps, and advising client panels.',
-    evaluationFocus: 'Financial Viability, Environmental Impact (SEE), Risk Mitigation'
+      'Official 2026-2027 Consulting Delegate Handbook. Advise Mizrahi Developments on expanding The One (1 Bloor St W) beyond 85 storeys with locked-in caissons and podium mega-columns.',
+    evaluationFocus:
+      '100 Total Points: Solution & SEE Impact (50), Technical Report (20), Client Presentation (30)',
+    fullRulebookText: CONSULTING_FULL_TEXT
   },
   {
     id: 'handbook-re-engineering',
@@ -308,19 +449,21 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Programming',
     week: 2,
     dates: 'November 14-15',
-    link: '#',
-    status: 'Coming Soon',
-    isAvailable: false,
-    teamSize: '4 members maximum',
-    eligibility: 'All Undergraduate Engineering Years',
+    link: '/assets/aistudio/2026_YEC_Programming_Rulebook_b79be9f9',
+    status: 'Available',
+    isAvailable: true,
+    teamSize: '4 members per team',
+    eligibility: 'York University Undergraduate Students',
     deliverables: [
-      'Source Code & Unit Test Suite',
-      'System Architecture Documentation',
-      'Live Code Demonstration & Code Review'
+      'PowerPoint / PDF Slide Deck (10-min pitch + Q&A)',
+      'Program Code & schedule.csv Output Contract (Zip / GitHub)',
+      'AI-Use Prompt & Code Log (if applicable)'
     ],
     description:
-      'Software engineering challenge rulebook outlining problem set distribution, API sandbox environments, performance benchmarking, and algorithmic complexity scoring.',
-    evaluationFocus: 'Algorithm Correctness, Computational Complexity, Code Cleanliness'
+      'Official 2026-2027 YEC Programming Rulebook. Teams build readable software to schedule campus EV charging across cost, CO2 intensity ($110/t), power caps, and fairness priority policies.',
+    evaluationFocus:
+      'Strategy & Hidden-Test Performance, Code Readability & Efficiency, Presentation & Technical Defence',
+    fullRulebookText: PROGRAMMING_FULL_TEXT
   },
   {
     id: 'handbook-bio-engineering',
@@ -329,18 +472,20 @@ export const HANDBOOKS_DATA: HandbookItem[] = [
     challengeName: 'Bio-Engineering',
     week: 2,
     dates: 'November 14-15',
-    link: '#',
-    status: 'Coming Soon',
-    isAvailable: false,
-    teamSize: '2 members maximum',
-    eligibility: 'All Undergraduate Engineering Years',
+    link: '/assets/aistudio/2026_YEC_Bioengineering_Rulebook_bcc7ce7b',
+    status: 'Available',
+    isAvailable: true,
+    teamSize: '2 members per team',
+    eligibility: 'York University Undergraduates (Engineering for OEC)',
     deliverables: [
-      'Biomedical Device / Process Model',
-      'Health Canada Regulatory Pathway Analysis',
-      'Clinical Efficacy Presentation'
+      'Electronic Engineering Report (max 10 pages, IEEE citations)',
+      'Presentation Slide Deck & 6-Min Technical Defence',
+      'CAD Models, Analysis & Optional Prototype'
     ],
     description:
-      'Handbook covering biological and biomedical systems engineering, patient safety constraints, biocompatibility standards, and clinical commercialization models.',
-    evaluationFocus: 'Clinical Feasibility, Regulatory Compliance, Biochemical/Biomechanical Rigor'
+      'Official 2026 YEC Bioengineering Rulebook. Teams design a low-cost, safe, and accessible biomedical or assistive technology solution supporting older adults with home balance rehabilitation.',
+    evaluationFocus:
+      '100 Total Points: Proposed Solution (60), Written Report (15), Presentation & Technical Defence (20), Innovation (5)',
+    fullRulebookText: BIO_ENGINEERING_FULL_TEXT
   }
 ];
